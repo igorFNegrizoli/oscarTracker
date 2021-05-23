@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">oscarTracker</string>
+    <string name="cat_best_director">Best Director</string>
+    <string name="cat_best_picture">Best Picture</string>
+    <string name="cat_best_actress_in_a_leading_role">Best Actress</string>
+    <string name="cat_best_actor_in_a_leading_role">Best Actor</string>
+    <string name="cat_best_actress_in_a_supporting_role">Best Supporting Actress</string>
+    <string name="cat_best_actor_in_a_supporting_role">Best Supporting Actor</string>
+    <string name="cat_best_original_screenplay">Best Original Screenplay</string>
+    <string name="cat_best_adapted_screenplay">Best Adapted Screenplay</string>
+    <string name="cat_best_cinematography">Best Cinematography</string>
+    <string name="cat_best_documentary_feature">Best Documentary Feature</string>
+    <string name="title_categories">Categories</string>
+    <string name="title_picks">Picks</string>
+    <string name="share_results">Share Results</string>
+    <string name="info_descricao_filme">His own body turned into a living work of art and promptly exhibited in a museum, Sam, a Syrian refugee, will soon realize to have sold away more  than just his skin.</string>
+    <string name="movie_minari">Minari</string>
+    <string name="info_duracao_filme">1h 56m</string>
+    <string name="watch">Watch</string>
+    <string name="cat_best_original_score">Best Original Score</string>
+    <string name="movie_promising_young_woman">Promising Young Woman</string>
+    <string name="movie_the_father">The Father</string>
+    <string name="movie_the_trial_ot_the_chicago_7">The Trial of the Chigago 7</string>
+    <string name="movie_the_sound_of_metal">The Sound of Metal</string>
+    <string name="movie_nomadland">Nomadland</string>
+    <string name="movie_judas_and_the_black_messiah">Judas and the Black Messiah</string>
+    <string name="movie_mank">Mank</string>
+    <string name="cat_best_film_editing">Best Film Editing</string>
+    <string name="cat_best_foreign_language_film">Best Foreign Language Film</string>
+</resources>
