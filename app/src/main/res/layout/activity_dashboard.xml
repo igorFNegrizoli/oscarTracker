@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_black"
+    tools:context=".picks">
+
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_settings" />
+
+    <TextView
+        android:id="@+id/textView59"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Movies Remaining"
+        android:textColor="@color/yellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView21"
+        app:layout_constraintEnd_toEndOf="@+id/imageView21"
+        app:layout_constraintStart_toStartOf="@+id/imageView21"
+        app:layout_constraintTop_toBottomOf="@+id/textView62" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="0sp"
+        android:layout_height="200sp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+        app:srcCompat="@drawable/dash_border" />
+
+    <TextView
+        android:id="@+id/textView62"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/movies_left"
+        android:textColor="@color/yellow"
+        android:textSize="100sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView21"
+        app:layout_constraintStart_toStartOf="@+id/imageView21"
+        app:layout_constraintTop_toTopOf="@+id/imageView21" />
+
+    <TextView
+        android:id="@+id/textView64"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/categories_remaining"
+        android:textColor="@color/yellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView64">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginVertical="3sp"
+                >
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_picture" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_director" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginVertical="3sp"
+                >
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_actress_in_a_leading_role" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_actor_in_a_leading_role" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginVertical="3sp">
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_actress_in_a_supporting_role" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_actor_in_a_supporting_role" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginVertical="3sp">
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_original_screenplay" />
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_adapted_screenplay" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginVertical="3sp">
+
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_cinematography" />
+
+                <Button
+                    android:id="@+id/button10"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_film_editing" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginVertical="3sp">
+
+                <Button
+                    android:id="@+id/button11"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_foreign_language_film" />
+
+                <Button
+                    android:id="@+id/button12"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/bg_black"
+                    android:layout_weight="1"
+                    android:textAllCaps="false"
+                    android:text="@string/cat_best_documentary_feature" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView21">
+
+        <ImageView
+            android:id="@+id/imageView28"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="5dp"
+            app:srcCompat="@drawable/icon_clock" />
+
+        <TextView
+            android:id="@+id/textView63"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="5dp"
+            android:text="16 hours and 39 minutes"
+            android:textColor="@color/yellow"
+            android:textSize="25sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView52"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/icon_film_strip" />
+
+        <ImageView
+            android:id="@+id/imageView45"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/icon_oscars" />
+
+        <ImageView
+            android:id="@+id/imageView29"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/icon_choice" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
