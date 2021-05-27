@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".picks"
-    android:background="@color/bg_black">
+    android:background="@color/bg_black"
+    android:fitsSystemWindows="true">
 
     <TextView
         android:id="@+id/textView"
@@ -118,7 +119,7 @@
                 android:layout_height="121dp"
                 android:alpha="1"
                 android:backgroundTint="@color/yellow"
-                android:drawableLeft="@drawable/icon_text_file"
+                android:drawableLeft="@drawable/icon_screenplay"
                 android:text="@string/cat_best_original_screenplay"
                 android:textAllCaps="false"
                 android:textColor="@color/bg_black"
@@ -130,7 +131,7 @@
                 android:layout_height="121dp"
                 android:alpha="1"
                 android:backgroundTint="@color/yellow"
-                android:drawableLeft="@drawable/icon_text_file"
+                android:drawableLeft="@drawable/icon_screenplay"
                 android:text="@string/cat_best_adapted_screenplay"
                 android:textAllCaps="false"
                 android:textColor="@color/bg_black"
@@ -165,14 +166,16 @@
 
     <Button
         android:id="@+id/button2"
+        android:onClick="onButtonShowPopupWindowClickPicks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="@string/share_results"
+        android:textStyle="bold"
         android:backgroundTint="@color/yellow"
         android:textColor="@color/bg_black"
         android:textAllCaps="false"
-        android:textSize="23sp"
+        android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

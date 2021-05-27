@@ -5,17 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_black"
-    tools:context=".picks">
+    tools:context=".dashboard"
+    android:fitsSystemWindows="true">
 
 
     <ImageView
         android:id="@+id/imageView15"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:onClick="open_settings"
         app:srcCompat="@drawable/icon_settings" />
 
     <TextView
@@ -37,7 +39,7 @@
         android:layout_width="0sp"
         android:layout_height="200sp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,6 +77,7 @@
         android:layout_height="300dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,177 +91,175 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
                 android:layout_marginVertical="3sp"
-                >
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_picture"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_picture" />
+                    android:textColor="@color/bg_black" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_director"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_director" />
+                    android:textColor="@color/bg_black" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
                 android:layout_marginVertical="3sp"
-                >
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_actress_in_a_leading_role"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_actress_in_a_leading_role" />
+                    android:textColor="@color/bg_black" />
 
                 <Button
                     android:id="@+id/button4"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_actor_in_a_leading_role"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_actor_in_a_leading_role" />
+                    android:textColor="@color/bg_black" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginVertical="3sp">
+                android:layout_marginVertical="3sp"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button5"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_actress_in_a_supporting_role"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_actress_in_a_supporting_role" />
+                    android:textColor="@color/bg_black" />
 
                 <Button
                     android:id="@+id/button6"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_actor_in_a_supporting_role"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_actor_in_a_supporting_role" />
+                    android:textColor="@color/bg_black" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginVertical="3sp">
+                android:layout_marginVertical="3sp"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button7"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_original_screenplay"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_original_screenplay" />
+                    android:textColor="@color/bg_black" />
 
                 <Button
                     android:id="@+id/button8"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_adapted_screenplay"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_adapted_screenplay" />
+                    android:textColor="@color/bg_black" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginVertical="3sp">
+                android:layout_marginVertical="3sp"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button9"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_cinematography"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_cinematography" />
+                    android:textColor="@color/bg_black" />
 
                 <Button
                     android:id="@+id/button10"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_film_editing"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_film_editing" />
+                    android:textColor="@color/bg_black" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginVertical="3sp">
+                android:layout_marginVertical="3sp"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button11"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_foreign_language_film"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_foreign_language_film" />
+                    android:textColor="@color/bg_black" />
 
                 <Button
                     android:id="@+id/button12"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="10dp"
-                    android:backgroundTint="@color/yellow"
-                    android:textColor="@color/bg_black"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/yellow"
+                    android:text="@string/cat_best_documentary_feature"
                     android:textAllCaps="false"
-                    android:text="@string/cat_best_documentary_feature" />
+                    android:textColor="@color/bg_black" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -311,6 +312,7 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="open_movies_list"
             app:srcCompat="@drawable/icon_film_strip" />
 
         <ImageView
@@ -318,6 +320,7 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="open_categories"
             app:srcCompat="@drawable/icon_oscars" />
 
         <ImageView
@@ -325,6 +328,7 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="open_picks"
             app:srcCompat="@drawable/icon_choice" />
 
     </LinearLayout>

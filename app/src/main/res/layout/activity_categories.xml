@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".categories"
-    android:background="@color/bg_black">
+    android:background="@color/bg_black"
+    android:fitsSystemWindows="true">
 
     <TextView
         android:id="@+id/textView"
@@ -120,7 +121,7 @@
                 android:layout_height="121dp"
                 android:alpha="1"
                 android:backgroundTint="@color/yellow"
-                android:drawableLeft="@drawable/icon_text_file"
+                android:drawableLeft="@drawable/icon_screenplay"
                 android:text="@string/cat_best_original_screenplay"
                 android:textAllCaps="false"
                 android:textColor="@color/bg_black"
@@ -132,7 +133,7 @@
                 android:layout_height="121dp"
                 android:alpha="1"
                 android:backgroundTint="@color/yellow"
-                android:drawableLeft="@drawable/icon_text_file"
+                android:drawableLeft="@drawable/icon_screenplay"
                 android:text="@string/cat_best_adapted_screenplay"
                 android:textAllCaps="false"
                 android:textColor="@color/bg_black"

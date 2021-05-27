@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/movies"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".categories"
-    android:background="@color/bg_black">
+    android:background="@color/bg_black"
+    android:onClick="onButtonShowPopupWindowClick"
+    tools:context=".movies"
+    android:fitsSystemWindows="true">
+
+
 
     <ImageView
         android:id="@+id/imageView2"
@@ -25,9 +30,9 @@
         android:layout_marginTop="8dp"
         android:autoSizeTextType="uniform"
         android:text="@string/movie_minari"
-        android:textStyle = "bold"
         android:textColor="@color/yellow"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,7 +104,8 @@
         android:text="@string/watch"
         android:textAllCaps="false"
         android:textColor="@color/bg_black"
-        android:textSize="23sp"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -124,8 +130,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginVertical = "5dp">
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -134,9 +140,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/textView50"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+
                         android:layout_weight="0.60"
                         android:autoSizeTextType="uniform"
                         android:text="@string/cat_best_picture"
@@ -144,11 +151,12 @@
                         android:textSize="15sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/textView51"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:autoSizeTextType="uniform"
+                        android:text=""
                         android:textColor="@color/yellow"
                         android:textSize="15sp" />
                 </LinearLayout>
@@ -160,35 +168,35 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView9"
+                        android:id="@+id/imageView53"
                         android:layout_width="wrap_content"
                         android:layout_height="30sp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/icon_fullstar" />
 
                     <ImageView
-                        android:id="@+id/imageView10"
+                        android:id="@+id/imageView54"
                         android:layout_width="wrap_content"
                         android:layout_height="30sp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/icon_fullstar" />
 
                     <ImageView
-                        android:id="@+id/imageView11"
+                        android:id="@+id/imageView55"
                         android:layout_width="wrap_content"
                         android:layout_height="30sp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/icon_fullstar" />
 
                     <ImageView
-                        android:id="@+id/imageView12"
+                        android:id="@+id/imageView56"
                         android:layout_width="wrap_content"
                         android:layout_height="30sp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/icon_fullstar" />
+                        app:srcCompat="@drawable/icon_emptystar" />
 
                     <ImageView
-                        android:id="@+id/imageView13"
+                        android:id="@+id/imageView57"
                         android:layout_width="wrap_content"
                         android:layout_height="30sp"
                         android:layout_weight="1"
@@ -200,8 +208,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginVertical = "5dp">
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -213,7 +221,7 @@
                         android:id="@+id/textView14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         
+
                         android:layout_weight="0.60"
                         android:autoSizeTextType="uniform"
                         android:text="@string/cat_best_director"
@@ -278,8 +286,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginVertical = "5dp">
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -291,7 +299,7 @@
                         android:id="@+id/textView21"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         
+
                         android:layout_weight="0.60"
                         android:autoSizeTextType="uniform"
                         android:text="@string/cat_best_actor_in_a_leading_role"
@@ -356,20 +364,22 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginVertical = "5dp">>
+                android:layout_marginVertical="5dp"
+                android:onClick="onButtonShowPopupWindowClick"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.6"
+                    android:onClick="onButtonShowPopupWindowClick"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textView28"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         
+
                         android:layout_weight="0.60"
                         android:autoSizeTextType="uniform"
                         android:text="@string/cat_best_actress_in_a_supporting_role"
@@ -434,8 +444,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginVertical = "5dp">
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -447,7 +457,7 @@
                         android:id="@+id/textView35"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         
+
                         android:layout_weight="0.60"
                         android:autoSizeTextType="uniform"
                         android:text="@string/cat_best_original_screenplay"
@@ -512,8 +522,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginVertical = "5dp">>
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -525,7 +535,7 @@
                         android:id="@+id/textView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         
+
                         android:layout_weight="0.60"
                         android:autoSizeTextType="uniform"
                         android:text="@string/cat_best_original_score"
