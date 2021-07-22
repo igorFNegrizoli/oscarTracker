@@ -24,9 +24,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/yellow"
+
+            android:gravity="center_horizontal"
             android:text="Oscar\nTracker"
-            android:textSize="40dp"
-            android:gravity="center_horizontal"/>
+            android:textColor="@color/yellow"
+            android:textSize="46dp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>
