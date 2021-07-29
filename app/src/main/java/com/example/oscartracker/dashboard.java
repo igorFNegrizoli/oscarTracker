@@ -1,14 +1,19 @@
 package com.example.oscartracker;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import database.databaseHelper;
+
 
 public class dashboard extends AppCompatActivity {
+    private SQLiteDatabase escreve;
+    private SQLiteDatabase le;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +21,10 @@ public class dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
         //Typeface type = Typeface.createFromAsset(getAssets(),"fonts/arial.ttf");
         //TextView.setTypeface(type);
+
+        databaseHelper db = new databaseHelper(this);
+        escreve = db.getWritableDatabase();
+        le = db.getReadableDatabase();
     }
 
     public void open_movies_list(View view){
