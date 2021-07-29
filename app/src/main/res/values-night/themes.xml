@@ -22,7 +22,7 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
-        <item name= "android:fontFamily" > @font/alegreya_sans_medium </item>
+        <item name= "android:fontFamily" > @font/open_sans_semi_bold</item>
     </style>
 
 </resources>
