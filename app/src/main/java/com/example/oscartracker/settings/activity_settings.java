@@ -34,9 +34,8 @@ public class activity_settings extends AppCompatActivity {
     }
 
     public void populaLista(){
-        //Interação com o banco
-
-        //Interação teste
+        //
+        //Addes
         listaCategorias.add("Best Picture");
         listaCategorias.add("Actor in a Leading Role");
         listaCategorias.add("Actor in a Supporting Role");
