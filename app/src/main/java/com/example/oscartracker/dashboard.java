@@ -8,6 +8,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.oscartracker.settings.activity_settings;
+
 import database.databaseHelper;
 
 
@@ -33,7 +35,7 @@ public class dashboard extends AppCompatActivity {
     }
 
     public void open_settings(View view){
-        Intent intent = new Intent(this, settings.class);
+        Intent intent = new Intent(this, activity_settings.class);
         startActivity(intent);
     }
 
