@@ -67,6 +67,7 @@
         android:textSize="25sp"
         android:thumbTint="@color/yellow"
         android:trackTint="@color/yellow"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/textView61"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
