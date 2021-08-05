@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class databaseHelper extends SQLiteOpenHelper {
-    public static int VERSION = 6;
+    public static int VERSION = 7;
     public static String NOME_DB = "OscarTrackerDB";
     public static String TABELA_FILME = "filme";
     public static String TABELA_CATEGORIA_FILME = "categoriaFilme";
@@ -48,6 +48,7 @@ public class databaseHelper extends SQLiteOpenHelper {
                             "life in the strange and rugged Ozarks, they discover the undeniable " +
                             "resilience of family and what really makes a home.",
                     "image_minari_cover");
+
             instantiate_filme(db,
                     "Judas and the Black Messiah",
                     126,
@@ -57,12 +58,14 @@ public class databaseHelper extends SQLiteOpenHelper {
                             "Chicago Police. But to destroy the revolution, the authorities are " +
                             "going to need a man on the inside.",
                     "image_black_messiah_cover");
+
             instantiate_filme(db, "Nomadland",
                     107,
                     "A woman in her sixties, after losing everything in the Great " +
                             "Recession, embarks on a journey through the American West, living " +
                             "as a van-dwelling modern-day nomad.",
                     "image_nomadland_cover");
+
             instantiate_filme(db, "Quo Vadis, Aida?",
                     101,
                     "Bosnia, July 1995. Aida is a translator for the UN in the small " +
@@ -71,8 +74,8 @@ public class databaseHelper extends SQLiteOpenHelper {
                             "UN camp. As an insider to the negotiations Aida has access to crucial " +
                             "information that she needs to interpret. What is at the horizon for her " +
                             "family and people - rescue or death? Which move should she take?",
-                    "image_quo_vadis_cover"
-                    );
+                    "image_quo_vadis_cover");
+
             instantiate_filme(db, "Collective",
                     109,
                     "Director Alexander Nanau follows a crack team of investigators at " +
@@ -80,10 +83,12 @@ public class databaseHelper extends SQLiteOpenHelper {
                             "vast health-care fraud that enriched moguls and politicians and led " +
                             "to the deaths of innocent citizens.",
                     "image_collective_cover");
+
             instantiate_filme(db, "Opera",
                     9,
                     "Our society and history, which is filled with beauty and absurdity",
                     "image_opera_cover");
+
             instantiate_filme(db, "Mank",
                     131,
                     "1940. Film studio RKO hires 24-year-old wunderkind Orson Welles " +
@@ -240,36 +245,201 @@ public class databaseHelper extends SQLiteOpenHelper {
                     "A man finds his stolen bicycle, which now belongs to a stranger. " +
                             "While attempting to retrieve it, he struggles to remain human.",
                     "image_white_eye_cover");
-            /*
-            instantiate_filme(db, "Crip Camp",);
-            instantiate_filme(db, "A Concerto is a Conversation",);
-            instantiate_filme(db, "The Man Who Sold His Skin",);
-            instantiate_filme(db, "Pinocchio",);
-            instantiate_filme(db, "The Letter Room",);
-            instantiate_filme(db, "Two Distant Strangers",);
-            instantiate_filme(db, "Genius Loci",);
-            instantiate_filme(db, "The White Tiger",);
-            instantiate_filme(db, "Eurovision Song Contest: The Story of Fire Saga",);
-            instantiate_filme(db, "The Present",);
-            instantiate_filme(db, "News of the World",);
-            instantiate_filme(db, "Onward",);
-            instantiate_filme(db, "If Anything Happens I Love You",);
-            instantiate_filme(db, "Better Days",);
-            instantiate_filme(db, "The United States vs. Billie Holiday",);
-            instantiate_filme(db, "My Octopus Teacher",);
-            instantiate_filme(db, "The Life Ahead",);
-            instantiate_filme(db, "Mulan",);
-            instantiate_filme(db, "Love and Monsters",);
-            instantiate_filme(db, "A Shaun the Sheep Movie: Farmageddon",);
-            instantiate_filme(db, "Pieces of a Woman",);
-            instantiate_filme(db, "Greyhond",);
-            instantiate_filme(db, "Over the Moon",);
-            instantiate_filme(db, "Borat Subsequent Moviefilm",);
-            instantiate_filme(db, "The One and Only Ivan",);
-            instantiate_filme(db, "Yes-People",);
-            instantiate_filme(db, "Hillbilly Elegy",);
-            instantiate_filme(db, "The Midnight Sky");*/
 
+            instantiate_filme(db, "Crip Camp",
+                    106,
+                    "Down the road from Woodstock, a revolution blossomed at a ramshackle " +
+                            "summer camp for teenagers with disabilities, transforming their lives " +
+                            "and igniting a landmark movement.",
+                    "image_crip_camp_cover");
+
+            instantiate_filme(db, "A Concerto is a Conversation",
+                    13,
+                    "A virtuoso jazz pianist and film composer tracks his family's " +
+                            "lineage through his 91-year-old grandfather from Jim Crow Florida " +
+                            "to the Walt Disney Concert Hall.",
+                    "image_concerto_conversation_cover");
+
+            instantiate_filme(db, "The Man Who Sold His Skin",
+                    104,
+                    "His own body turned into a living work of art and promptly " +
+                            "exhibited in a museum, Sam, a Syrian refugee, will soon realize " +
+                            "to have sold away more than just his skin.",
+                    "image_sold_skin_cover");
+
+            instantiate_filme(db, "Pinocchio",
+                    125,
+                    "Old woodcarver Geppetto's puppet creation, Pinocchio, magically " +
+                            "comes to life with dreams of becoming a real boy. Easily led astray, " +
+                            "Pinocchio tumbles from one misadventure to another as he is tricked, " +
+                            "kidnapped and chased by bandits.",
+                    "image_pinocchio_cover");
+
+            instantiate_filme(db, "The Letter Room",
+                    33,
+                    "When a corrections officer is transferred to the letter room, he " +
+                            "soon finds himself enmeshed in a prisoner's deeply private life.",
+                    "image_letter_room_cover");
+
+            instantiate_filme(db, "Two Distant Strangers",
+                    32,
+                    "A man trying to get home to his dog gets stuck in a time loop " +
+                            "that forces him to relive a deadly run-in with a cop.",
+                    "image_two_distant_cover");
+
+            instantiate_filme(db, "Genius Loci",
+                    16,
+                    "One night, Reine, a young loner, sees the urban chaos as a " +
+                            "mystical oneness that seems alive, like some sort of guide.",
+                    "image_genius_loci_cover");
+
+            instantiate_filme(db, "The White Tiger",
+                    125,
+                    "An ambitious Indian driver uses his wit and cunning to escape " +
+                            "from poverty and rise to the top. An epic journey based on the " +
+                            "New York Times bestseller.",
+                    "image_white_tiger_cover");
+
+            instantiate_filme(db, "Eurovision Song Contest: The Story of Fire Saga",
+                    123,
+                    "When aspiring musicians Lars and Sigrit are given the opportunity " +
+                            "to represent their country at the world's biggest song competition, " +
+                            "they finally have a chance to prove that any dream worth having is " +
+                            "a dream worth fighting for.",
+                    "image_eurovision_cover");
+
+            instantiate_filme(db, "The Present",
+                    24,
+                    "On his wedding anniversary, Yusef and his young daughter set out " +
+                            "in the West Bank to buy his wife a gift. Between soldiers, " +
+                            "segregated roads and checkpoints, how easy would it be to go " +
+                            "shopping?",
+                    "image_present_cover");
+
+            instantiate_filme(db, "News of the World",
+                    118,
+                    "A Civil War veteran agrees to deliver a girl, taken by the Kiowa " +
+                            "people years ago, to her aunt and uncle, against her will. They " +
+                            "travel hundreds of miles and face grave dangers as they search " +
+                            "for a place that either can call home.",
+                    "image_news_world_cover");
+
+            instantiate_filme(db, "Onward",
+                    102,
+                    "Two elven brothers embark on a quest to bring their father back " +
+                            "for one day.",
+                    "image_onward_cover");
+
+            instantiate_filme(db, "If Anything Happens I Love You",
+                    13,
+                    "In the aftermath of tragedy, two grieving parents journey through " +
+                            "an emotional void as they mourn the loss of a child.",
+                    "image_if_anything_cover");
+
+            instantiate_filme(db, "Better Days",
+                    135,
+                    "A bullied teenage girl forms an unlikely friendship with a " +
+                            "mysterious young man who protects her from her assailants, all " +
+                            "while she copes with the pressures of her final examinations.",
+                    "image_better_days_cover");
+
+            instantiate_filme(db, "The United States vs. Billie Holiday",
+                    126,
+                    "Follows Holiday during her career as she is targeted by the " +
+                            "Federal Department of Narcotics with an undercover sting operation " +
+                            "led by black Federal Agent Jimmy Fletcher, with whom she has a " +
+                            "tumultuous affair.",
+                    "image_billie_holiday_cover");
+
+            instantiate_filme(db, "My Octopus Teacher",
+                    85,
+                    "A filmmaker forges an unusual friendship with an octopus living " +
+                            "in a South African kelp forest, learning as the animal shares the " +
+                            "mysteries of her world.",
+                    "image_octopus_cover");
+
+            instantiate_filme(db, "The Life Ahead",
+                    94,
+                    "In seaside Italy, a Holocaust survivor with a daycare business " +
+                            "takes in a 12-year-old street kid who recently robbed her.",
+                    "image_life_ahead_cover");
+
+            instantiate_filme(db, "Mulan",
+                    115,
+                    "A young Chinese maiden disguises herself as a male warrior " +
+                            "in order to save her father.",
+                    "image_mulan_cover");
+
+            instantiate_filme(db, "Love and Monsters",
+                    109,
+                    "Seven years after he survived the monster apocalypse, lovably " +
+                            "hapless Joel leaves his cozy underground bunker behind on a " +
+                            "quest to reunite with his ex.",
+                    "image_love_monsters_cover");
+
+            instantiate_filme(db, "A Shaun the Sheep Movie: Farmageddon",
+                    86,
+                    "When an alien with amazing powers crash-lands near Mossy Bottom " +
+                            "Farm, Shaun the Sheep goes on a mission to shepherd the " +
+                            "intergalactic visitor home before a sinister organization can " +
+                            "capture her.",
+                    "image_shaun_cover");
+
+            instantiate_filme(db, "Pieces of a Woman",
+                    126,
+                    "When a young mother's home birth ends in unfathomable tragedy, " +
+                            "she begins a year-long odyssey of mourning that fractures " +
+                            "relationships with loved ones in this deeply personal story " +
+                            "of a woman learning to live alongside her loss.",
+                    "image_pieces_woman_cover");
+
+            instantiate_filme(db, "Greyhound",
+                    91,
+                    "Several months after the U.S. entry into World War II, an " +
+                            "inexperienced U.S. Navy commander must lead an Allied convoy " +
+                            "being stalked by a German submarine wolf pack.",
+                    "image_greyhound_cover");
+
+            instantiate_filme(db, "Over the Moon",
+                    95,
+                    "In this animated musical, a girl builds a rocket ship and blasts " +
+                            "off, hoping to meet a mythical moon goddess.",
+                    "image_over_moon_cover");
+
+            instantiate_filme(db, "Borat Subsequent Moviefilm",
+                    95,
+                    "Borat returns from Kazakhstan to America and this time he reveals " +
+                            "more about the American culture, the COVID-19 pandemic and the " +
+                            "political elections.",
+                    "image_borat_cover");
+
+            instantiate_filme(db, "The One and Only Ivan",
+                    95,
+                    "A gorilla named Ivan tries to piece together his past with the " +
+                            "help of an elephant named Ruby as they hatch a plan to escape from " +
+                            "captivity.",
+                    "image_ivan_cover");
+
+            instantiate_filme(db, "Yes-People",
+                    8,
+                    "People living in the same apartment block go about their daily " +
+                            "lives and daily routines whilst only uttering the word 'Yes' in " +
+                            "several different iterations.",
+                    "image_yes_people_cover");
+
+            instantiate_filme(db, "Hillbilly Elegy",
+                    116,
+                    "An urgent phone call pulls a Yale Law student back to his Ohio " +
+                            "hometown, where he reflects on three generations of family history " +
+                            "and his own future.",
+                    "image_hillbilly_cover");
+
+            instantiate_filme(db, "The Midnight Sky",
+                    118,
+                    "This post-apocalyptic tale follows Augustine, a lonely scientist " +
+                            "in the Arctic, as he races to stop Sully and her fellow astronauts " +
+                            "from returning home to a mysterious global catastrophe.",
+                    "image_midnight_sky_cover");
 
             Log.i("INFO BANCODEDADOS", "Sucesso ao popular a tabela "+TABELA_FILME);
         }catch (Exception e){
@@ -333,7 +503,7 @@ public class databaseHelper extends SQLiteOpenHelper {
             instantiate_categoria_filme(db, 6,  2);
             instantiate_categoria_filme(db, 16, 3);
             instantiate_categoria_filme(db, 8,  3, "Chloé Zhao", "image_nomadland_direct");
-            instantiate_categoria_filme(db, 3,  3, "Frances McDormand", "image_nomadland_actres");
+            instantiate_categoria_filme(db, 3,  3, "Frances McDormand", "image_nomadland_actress");
             instantiate_categoria_filme(db, 22, 3);
             instantiate_categoria_filme(db, 6,  3);
             instantiate_categoria_filme(db, 11, 3);
@@ -398,14 +568,47 @@ public class databaseHelper extends SQLiteOpenHelper {
             instantiate_categoria_filme(db, 9,  24);
             instantiate_categoria_filme(db, 10, 25);
             instantiate_categoria_filme(db, 10, 26);
-            instantiate_categoria_filme(db, 2, 27, "Leslie Odom Jr.", "image_miami_sup_actor");
+            instantiate_categoria_filme(db, 2,  27, "Leslie Odom Jr.", "image_miami_sup_actor");
             instantiate_categoria_filme(db, 22, 27);
             instantiate_categoria_filme(db, 15, 27);
             instantiate_categoria_filme(db, 19, 28);
+            instantiate_categoria_filme(db, 9,  29);
+            instantiate_categoria_filme(db, 10, 30);
+            instantiate_categoria_filme(db, 12, 31);
+            instantiate_categoria_filme(db, 7,  32);
+            instantiate_categoria_filme(db, 13, 32);
+            instantiate_categoria_filme(db, 19, 33);
+            instantiate_categoria_filme(db, 19, 34);
+            instantiate_categoria_filme(db, 18, 35);
+            instantiate_categoria_filme(db, 22, 36);
+            instantiate_categoria_filme(db, 15, 37);
+            instantiate_categoria_filme(db, 19, 38);
+            instantiate_categoria_filme(db, 6,  39);
+            instantiate_categoria_filme(db, 14, 39);
+            instantiate_categoria_filme(db, 17, 39);
+            instantiate_categoria_filme(db, 20, 39);
+            instantiate_categoria_filme(db, 5,  40);
+            instantiate_categoria_filme(db, 18, 41);
+            instantiate_categoria_filme(db, 12, 42);
+            instantiate_categoria_filme(db, 3,  43, "Andra Day", "image_billie_actress");
+            instantiate_categoria_filme(db, 9,  44);
+            instantiate_categoria_filme(db, 15, 45);
+            instantiate_categoria_filme(db, 21, 46);
+            instantiate_categoria_filme(db, 7,  46);
+            instantiate_categoria_filme(db, 21, 47);
+            instantiate_categoria_filme(db, 5,  48);
+            instantiate_categoria_filme(db, 3,  49, "Vanessa Kirby", "image_pieces_actress");
+            instantiate_categoria_filme(db, 20, 50);
+            instantiate_categoria_filme(db, 5,  51);
+            instantiate_categoria_filme(db, 22, 52);
+            instantiate_categoria_filme(db, 4,  52, "Maria Bakalova", "image_borat_sup_actress");
+            instantiate_categoria_filme(db, 21, 53);
+            instantiate_categoria_filme(db, 18, 54);
+            instantiate_categoria_filme(db, 13, 55);
+            instantiate_categoria_filme(db, 4, 55, "Glenn Close", "image_hillbilly_sup_actress");
+            instantiate_categoria_filme(db, 21, 56);
 
-
-
-                    Log.i("INFO BANCODEDADOS", "Sucesso ao popular a tabela "+TABELA_CATEGORIA_FILME);
+            Log.i("INFO BANCODEDADOS", "Sucesso ao popular a tabela "+TABELA_CATEGORIA_FILME);
         }catch (Exception e){
             Log.i("INFO BANCODEDADOS", "Erro ao popular a tabela categoriaFilme"+ e.getMessage());
         }

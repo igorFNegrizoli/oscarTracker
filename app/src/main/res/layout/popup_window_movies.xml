@@ -43,7 +43,7 @@
             android:layout_height="160sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/image_veiadominari" />
+            app:srcCompat="@drawable/image_minari_sup_actress" />
 
         <RatingBar
             android:id="@+id/ratingBar"
