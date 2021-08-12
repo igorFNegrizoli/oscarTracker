@@ -13,7 +13,7 @@
         android:onClick="open_movies">
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/nome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -25,7 +25,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/duracao"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -36,7 +36,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/nIndicacoes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -47,7 +47,7 @@
             android:textSize="20sp" />
 
         <ImageView
-            android:id="@+id/imageView46"
+            android:id="@+id/jaViu"
             android:layout_width="6dp"
             android:layout_height="30sp"
             android:layout_gravity="center_vertical"

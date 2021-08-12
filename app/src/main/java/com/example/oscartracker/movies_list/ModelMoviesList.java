@@ -2,7 +2,7 @@ package com.example.oscartracker.movies_list;
 
 public class ModelMoviesList {
 
-    private String tituloFilme;
+    private String nome;
     private String duracao;
     private String nIndicacoes;
     private Boolean jaViu;
@@ -11,19 +11,19 @@ public class ModelMoviesList {
 
     }
 
-    public ModelMoviesList(String tituloFilme, String duracao, String nIndicacoes, Boolean jaViu) {
-        this.tituloFilme = tituloFilme;
+    public ModelMoviesList(String nome, String duracao, String nIndicacoes, Boolean jaViu) {
+        this.nome = nome;
         this.duracao = duracao;
         this.nIndicacoes = nIndicacoes;
         this.jaViu = jaViu;
     }
 
-    public String getTituloFilme() {
-        return tituloFilme;
+    public String getnome() {
+        return nome;
     }
 
-    public void setTituloFilme(String tituloFilme) {
-        this.tituloFilme = tituloFilme;
+    public void setnome(String nome) {
+        this.nome = nome;
     }
 
     public String getDuracao() {
