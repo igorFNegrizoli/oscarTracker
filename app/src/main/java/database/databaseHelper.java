@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class databaseHelper extends SQLiteOpenHelper {
-    public static int VERSION = 7;
+    public static int VERSION = 9;
     public static String NOME_DB = "OscarTrackerDB";
     public static String TABELA_FILME = "filme";
     public static String TABELA_CATEGORIA_FILME = "categoriaFilme";
@@ -461,6 +461,21 @@ public class databaseHelper extends SQLiteOpenHelper {
         populate_filme(db);
     }
 
+    public void instantiate_categoria_filme(SQLiteDatabase db, Integer id_categoria, Integer id_filme, String indicado, String caminhoImagemIndicado, Integer nomeacao_repetida_na_categoria){
+        try{
+            ContentValues movie_category_insert = new ContentValues();
+            movie_category_insert.put("id_categoria", id_categoria);
+            movie_category_insert.put("id_filme", id_filme);
+            movie_category_insert.put("indicado", indicado);
+            movie_category_insert.put("caminhoImagemIndicado", caminhoImagemIndicado);
+            movie_category_insert.put("nomeacao_repetida_na_categoria", nomeacao_repetida_na_categoria);
+            db.insert(TABELA_CATEGORIA_FILME, null, movie_category_insert);
+        }catch (Exception e){
+            Log.i("INFO BANCODEDADOS", "Erro ao instanciar filmeCategoria (" +
+                    ""+Integer.toString(id_categoria)+","+Integer.toString(id_filme)+")"+ e.getMessage());
+        }
+    }
+
     public void instantiate_categoria_filme(SQLiteDatabase db, Integer id_categoria, Integer id_filme, String indicado, String caminhoImagemIndicado){
         try{
             ContentValues movie_category_insert = new ContentValues();
@@ -497,7 +512,7 @@ public class databaseHelper extends SQLiteOpenHelper {
             instantiate_categoria_filme(db, 23, 1);
             instantiate_categoria_filme(db, 16, 2);
             instantiate_categoria_filme(db, 2,  2, "LaKeith Stanfield", "image_black_messiah_lakeith");
-            instantiate_categoria_filme(db, 2,  2, "Daniel Kaluuya","image_black_messiah_kaluuya");
+            instantiate_categoria_filme(db, 2,  2, "Daniel Kaluuya","image_black_messiah_kaluuya", 2);
             instantiate_categoria_filme(db, 23, 2);
             instantiate_categoria_filme(db, 15, 2);
             instantiate_categoria_filme(db, 6,  2);
@@ -617,11 +632,12 @@ public class databaseHelper extends SQLiteOpenHelper {
     public void create_categoria_filme_table(SQLiteDatabase db){
         String sql_create_categoria_filme = "CREATE TABLE IF NOT EXISTS " + TABELA_CATEGORIA_FILME +"("+
                 " id_categoria INTEGER REFERENCES categoria(id),"+
-                " id_filme INTEGER REFERENCES filme(id),"+
+                " id_filme INTEGER REFERENCES filme(id)," +
+                " nomeacao_repetida_na_categoria INTEGER DEFAULT 1,"+
                 " rating INTEGER DEFAULT 0," +
                 " indicado TEXT,"+
                 " caminhoImagemIndicado TEXT," +
-                " CONSTRAINT pk_cat_film PRIMARY KEY (id_categoria, id_filme)"+
+                " CONSTRAINT pk_cat_film PRIMARY KEY (id_categoria, id_filme, nomeacao_repetida_na_categoria)"+
                 ");";
 
         execTableCreation(db, sql_create_categoria_filme, TABELA_CATEGORIA_FILME);

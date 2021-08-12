@@ -21,9 +21,10 @@ public class splash_screen extends AppCompatActivity {
 
         databaseHelper db = new databaseHelper(this);
         le = db.getReadableDatabase();
-        consulta.consultaFilmes(le);
-        consulta.consultaCategorias(le);
-        consulta.consultaFilmeCategorias(le);
+        //consulta.consultaFilmes(le);
+        //consulta.consultaCategorias(le);
+        //consulta.consultaFilmeCategorias(le);
+        consulta.consultaMoviesList(le);
 
         //Splash Screen duration
         int secondsDelayed = 1;

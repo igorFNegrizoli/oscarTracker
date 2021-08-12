@@ -3,9 +3,15 @@ package database;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.view.Display;
+
+import com.example.oscartracker.movies_list.ModelMoviesList;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class consultas {
-    public void consultaFilmes(SQLiteDatabase le){
+    private void consultaTodosFilmes(SQLiteDatabase le){
         try{
             String consulta = "SELECT * FROM filme";
             Cursor cursor = le.rawQuery(consulta,null);
@@ -42,7 +48,7 @@ public class consultas {
         }
     }
 
-    public void consultaCategorias(SQLiteDatabase le){
+    private void consultaTodosCategorias(SQLiteDatabase le){
         try{
             String consulta = "SELECT * FROM categoria";
             Cursor cursor = le.rawQuery(consulta,null);
@@ -81,7 +87,7 @@ public class consultas {
         }
     }
 
-    public void consultaFilmeCategorias(SQLiteDatabase le){
+    private void consultaTodosFilmeCategorias(SQLiteDatabase le){
         try{
             String consulta = "SELECT * FROM categoriaFilme";
             Cursor cursor = le.rawQuery(consulta,null);
@@ -114,5 +120,49 @@ public class consultas {
             Log.i("RESULTADO -", "ERRO");
             e.printStackTrace();
         }
+    }
+
+    public List<ModelMoviesList> consultaMoviesList(SQLiteDatabase le){
+        List<ModelMoviesList> listMovies = new ArrayList<>();
+
+        try{
+            String consulta = "SELECT nome, duracao, COUNT(DISTINCT id_categoria) AS Nomeacoes, jaViu " +
+                    "FROM filme, categoriaFilme " +
+                    "WHERE id=id_filme " +
+                    "GROUP BY nome, duracao, jaViu";
+
+            Cursor cursor = le.rawQuery(consulta,null);
+
+
+            int indiceNome = cursor.getColumnIndex("nome");
+            int indiceDuracao = cursor.getColumnIndex("duracao");
+            int indiceNomeacoes = cursor.getColumnIndex("Nomeacoes");
+            int indiceJaViu = cursor.getColumnIndex("jaViu");
+
+            cursor.moveToFirst();
+
+            while(!cursor.isAfterLast()){
+                ModelMoviesList new_movie = new ModelMoviesList();
+
+                new_movie.setTituloFilme(cursor.getString(indiceNome));
+                new_movie.setDuracao(cursor.getInt(indiceDuracao));
+                new_movie.setnIndicacoes(cursor.getInt(indiceNomeacoes));
+                new_movie.setJaViu(cursor.getInt(indiceJaViu));
+
+                listMovies.add(new_movie);
+
+                /*Log.i("RESULTADO - "," Nome: "+nome+" Duracao: "+ duracao +"  Nomeacoes: "+ nomeacoes +
+                        " JaViu: "+jaViu
+                );*/
+
+                cursor.moveToNext();
+            }
+
+            cursor.close();
+        }catch (Exception e){
+            Log.i("RESULTADO -", "ERRO NA QUERY");
+            e.printStackTrace();
+        }
+        return listMovies;
     }
 }

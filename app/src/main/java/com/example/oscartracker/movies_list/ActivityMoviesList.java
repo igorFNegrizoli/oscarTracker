@@ -1,5 +1,6 @@
 package com.example.oscartracker.movies_list;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Adapter;
 import android.widget.LinearLayout;
@@ -15,8 +16,13 @@ import com.example.oscartracker.settings.adapter_settings;
 import java.util.ArrayList;
 import java.util.List;
 
+import database.consultas;
+import database.databaseHelper;
+
 
 public class ActivityMoviesList extends AppCompatActivity {
+    private SQLiteDatabase le;
+    private final consultas consulta = new consultas();
     private List<ModelMoviesList> listMovies = new ArrayList<>();
     private RecyclerView recyclerView;
 
@@ -34,8 +40,8 @@ public class ActivityMoviesList extends AppCompatActivity {
     }
 
     public void populateMovies(){
-        //
-        //Addes
-
+        databaseHelper db = new databaseHelper(this);
+        le = db.getReadableDatabase();
+        this.listMovies = consulta.consultaMoviesList(le);
     }
 }
