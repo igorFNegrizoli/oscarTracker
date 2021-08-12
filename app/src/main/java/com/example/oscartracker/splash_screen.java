@@ -24,7 +24,7 @@ public class splash_screen extends AppCompatActivity {
         //consulta.consultaFilmes(le);
         //consulta.consultaCategorias(le);
         //consulta.consultaFilmeCategorias(le);
-        consulta.consultaMoviesList(le);
+        //consulta.consultaMoviesList(le);
 
         //Splash Screen duration
         int secondsDelayed = 1;
