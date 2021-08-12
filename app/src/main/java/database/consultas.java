@@ -1,5 +1,6 @@
 package database;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class consultas {
-    public void consultaTodosFilmes(SQLiteDatabase le){
+    private void consultaTodosFilmes(SQLiteDatabase le){
         try{
             String consulta = "SELECT * FROM filme";
             Cursor cursor = le.rawQuery(consulta,null);
@@ -48,7 +49,7 @@ public class consultas {
         }
     }
 
-    private void consultaTodosCategorias(SQLiteDatabase le){
+    public void consultaTodosCategorias(SQLiteDatabase le){
         try{
             String consulta = "SELECT * FROM categoria";
             Cursor cursor = le.rawQuery(consulta,null);
@@ -87,7 +88,7 @@ public class consultas {
         }
     }
 
-    private void consultaTodosFilmeCategorias(SQLiteDatabase le){
+    public void consultaTodosFilmeCategorias(SQLiteDatabase le){
         try{
             String consulta = "SELECT * FROM categoriaFilme";
             Cursor cursor = le.rawQuery(consulta,null);
@@ -126,13 +127,12 @@ public class consultas {
         List<ModelMoviesList> listMovies = new ArrayList<>();
 
         try{
-            String consulta = "SELECT nome, duracao, COUNT(DISTINCT id_categoria) AS Nomeacoes, jaViu " +
-                    "FROM filme, categoriaFilme " +
-                    "WHERE id=id_filme " +
-                    "GROUP BY nome, duracao, jaViu";
+            String consulta = "SELECT filme.nome, duracao, COUNT(DISTINCT id_categoria) AS Nomeacoes, jaViu " +
+                    "FROM filme, categoriaFilme, categoria " +
+                    "WHERE filme.id=id_filme AND categoria.id=id_categoria AND categoria.selecionada=1 " +
+                    "GROUP BY filme.nome, duracao, jaViu";
 
             Cursor cursor = le.rawQuery(consulta,null);
-
 
             int indiceNome = cursor.getColumnIndex("nome");
             int indiceDuracao = cursor.getColumnIndex("duracao");
@@ -151,10 +151,6 @@ public class consultas {
 
                 listMovies.add(new_movie);
 
-                /*Log.i("RESULTADO - "," Nome: "+nome+" Duracao: "+ duracao +"  Nomeacoes: "+ nomeacoes +
-                        " JaViu: "+jaViu
-                );*/
-
                 cursor.moveToNext();
             }
 
@@ -165,10 +161,25 @@ public class consultas {
         }
         /*
         for(ModelMoviesList movie: listMovies) {
-            Log.i("listMovies - ", " Nome: "+movie.getNome()+" Duracao: "+ movie.getDuracao() +"  Nomeacoes: "+ movie.getnIndicacoes() +
+            Log.i("listMovies - ", " Nome: "+movie.getTituloFilme()+" Duracao: "+ movie.getDuracao() +"  Nomeacoes: "+ movie.getnIndicacoes() +
                     " JaViu: "+movie.getJaViu());
         }
         */
+
         return listMovies;
+    }
+
+
+    public void writeCategoriaSelecionada(SQLiteDatabase escreve, String nome_categoria){
+        ContentValues data = new ContentValues();
+        data.put("selecionada", 0);
+
+        try{
+            escreve.update("categoria", data, "nome= '"+nome_categoria+"'",null);
+            Log.i("RESULTADOS -", "foi");
+        }catch (Exception e){
+            Log.i("RESULTADOS -", "ERRO");
+            e.printStackTrace();
+        }
     }
 }
