@@ -32,11 +32,11 @@ public class ActivityMoviesList extends AppCompatActivity {
         setContentView(R.layout.activity_movies_list);
         recyclerView = findViewById(R.id.recyclerView);
         this.populateMovies();
-        adapter_settings adapter = new adapter_settings(listMovies);
+        //adapter_settings adapter = new adapter_settings(listMovies);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(adapter);
+        //recyclerView.setAdapter(adapter);
     }
 
     public void populateMovies(){

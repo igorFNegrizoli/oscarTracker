@@ -11,7 +11,7 @@ import database.databaseHelper;
 import android.os.Handler;
 
 public class splash_screen extends AppCompatActivity {
-    SQLiteDatabase le;
+    SQLiteDatabase le, escreve;
     final consultas consulta = new consultas();
 
     @Override
@@ -20,11 +20,19 @@ public class splash_screen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         databaseHelper db = new databaseHelper(this);
-        le = db.getReadableDatabase();
+        //le = db.getReadableDatabase();
+        escreve = db.getWritableDatabase();
+
+        /*
+        consulta.consultaTodosCategorias(escreve);
+        consulta.writeCategoriaSelecionada(escreve, "International Feature Film");
+        consulta.consultaTodosCategorias(escreve);
+        */
+
         //consulta.consultaFilmes(le);
         //consulta.consultaCategorias(le);
         //consulta.consultaFilmeCategorias(le);
-        //consulta.consultaMoviesList(le);
+        //consulta.consultaMoviesList(escreve);
 
         //Splash Screen duration
         int secondsDelayed = 1;

@@ -30,8 +30,8 @@ public class dashboard extends AppCompatActivity {
     }
 
     public void open_movies_list(View view){
-        Intent intent = new Intent(this, movies_list.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, movies_list.class);
+        //startActivity(intent);
     }
 
     public void open_settings(View view){

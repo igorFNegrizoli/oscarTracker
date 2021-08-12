@@ -26,6 +26,7 @@ public class activity_settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         recyclerView = findViewById(R.id.recyclerView);
         this.populateLista();
+
         adapter_settings adapter = new adapter_settings(listaCategorias);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -34,8 +35,6 @@ public class activity_settings extends AppCompatActivity {
     }
 
     public void populateLista(){
-        //
-        //Addes
         listaCategorias.add("Best Picture");
         listaCategorias.add("Actor in a Leading Role");
         listaCategorias.add("Actor in a Supporting Role");
