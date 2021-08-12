@@ -23,7 +23,7 @@ public class adapter_settings extends RecyclerView.Adapter<adapter_settings.MyVi
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemLista = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.viewholder_selected_settings, parent, false);
+                .inflate(R.layout.viewholder_setting, parent, false);
         return new MyViewHolder(itemLista);
     }
 

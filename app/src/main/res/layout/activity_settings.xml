@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
-                tools:listitem="@layout/viewholder_selected_settings" />
+                tools:listitem="@layout/viewholder_setting" />
 
     </ScrollView>
 
