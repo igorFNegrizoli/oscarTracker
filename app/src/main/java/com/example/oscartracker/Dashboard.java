@@ -8,12 +8,13 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.oscartracker.settings.activity_settings;
+import com.example.oscartracker.movies_list.ActivityMoviesList;
+import com.example.oscartracker.settings.ActivitySettingsScreen;
 
 import database.databaseHelper;
 
 
-public class dashboard extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity {
     private SQLiteDatabase escreve;
     private SQLiteDatabase le;
 
@@ -30,22 +31,22 @@ public class dashboard extends AppCompatActivity {
     }
 
     public void open_movies_list(View view){
-        Intent intent = new Intent(this, movies_list.class);
+        Intent intent = new Intent(this, ActivityMoviesList.class);
         startActivity(intent);
     }
 
     public void open_settings(View view){
-        Intent intent = new Intent(this, activity_settings.class);
+        Intent intent = new Intent(this, ActivitySettingsScreen.class);
         startActivity(intent);
     }
 
     public void open_categories(View view) {
-        Intent intent = new Intent(this, categories.class);
+        Intent intent = new Intent(this, Categories.class);
         startActivity(intent);
     }
 
     public void open_picks(View view) {
-        Intent intent = new Intent(this, picks.class);
+        Intent intent = new Intent(this, Picks.class);
         startActivity(intent);
     }
 

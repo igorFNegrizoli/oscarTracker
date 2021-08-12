@@ -14,7 +14,7 @@ import android.widget.PopupWindow;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class movies extends AppCompatActivity {
+public class Movies extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

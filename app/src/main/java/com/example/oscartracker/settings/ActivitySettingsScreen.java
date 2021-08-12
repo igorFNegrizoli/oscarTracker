@@ -1,22 +1,18 @@
 package com.example.oscartracker.settings;
 
 import android.os.Bundle;
-import android.widget.Adapter;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oscartracker.R;
-import com.example.oscartracker.settings.adapter_settings;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class activity_settings extends AppCompatActivity {
+public class ActivitySettingsScreen extends AppCompatActivity {
     private List<String> listaCategorias = new ArrayList<>();
     private RecyclerView recyclerView;
 
@@ -26,7 +22,7 @@ public class activity_settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         recyclerView = findViewById(R.id.recyclerView);
         this.populateLista();
-        adapter_settings adapter = new adapter_settings(listaCategorias);
+        AdapterSettingsScreen adapter = new AdapterSettingsScreen(listaCategorias);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);

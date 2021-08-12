@@ -12,10 +12,10 @@ import com.example.oscartracker.R;
 
 import java.util.List;
 
-public class adapter_settings extends RecyclerView.Adapter<adapter_settings.MyViewHolder> {
+public class AdapterSettingsScreen extends RecyclerView.Adapter<AdapterSettingsScreen.MyViewHolder> {
     private List<String> listaCategorias;
 
-    public adapter_settings(List<String> lista){
+    public AdapterSettingsScreen(List<String> lista){
         this.listaCategorias = lista;
     }
 

@@ -13,7 +13,7 @@ import android.widget.PopupWindow;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class picks extends AppCompatActivity {
+public class Picks extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

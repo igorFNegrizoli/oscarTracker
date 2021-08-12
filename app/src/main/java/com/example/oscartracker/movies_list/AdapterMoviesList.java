@@ -2,6 +2,7 @@ package com.example.oscartracker.movies_list;
 
 import android.graphics.ColorSpace;
 import android.graphics.Movie;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,10 +36,17 @@ public class AdapterMoviesList extends RecyclerView.Adapter<AdapterMoviesList.My
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         ModelMoviesList movie = moviesList.get(position);
-        holder.nome.setText(movie.getnome());
+        holder.nome.setText(movie.getNome());
         holder.duracao.setText(movie.getDuracao());
         holder.nIndicacoes.setText(movie.getnIndicacoes());
-        holder.jaViu.setText(movie.getJaViu());
+
+        if(movie.getJaViu()){
+            //Log.i("listMoviesTrue - ", " Nome: "+movie.getNome()+" Duracao: "+ movie.getDuracao() +"  Nomeacoes: "+ movie.getnIndicacoes() + " JaViu: "+movie.getJaViu());
+            holder.jaViu.setImageResource(R.drawable.icon_checknobox_true);
+        }else{
+            //Log.i("listMoviesFalse - ", " Nome: "+movie.getNome()+" Duracao: "+ movie.getDuracao() +"  Nomeacoes: "+ movie.getnIndicacoes() + " JaViu: "+movie.getJaViu());
+            holder.jaViu.setImageResource(R.drawable.icon_checknobox_false);
+        }
     }
 
     @Override

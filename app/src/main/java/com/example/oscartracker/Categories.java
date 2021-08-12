@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-public class categories extends AppCompatActivity {
+public class Categories extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

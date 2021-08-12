@@ -10,7 +10,7 @@ import database.consultas;
 import database.databaseHelper;
 import android.os.Handler;
 
-public class splash_screen extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
     SQLiteDatabase le;
     final consultas consulta = new consultas();
 
@@ -21,15 +21,16 @@ public class splash_screen extends AppCompatActivity {
 
         databaseHelper db = new databaseHelper(this);
         le = db.getReadableDatabase();
-        consulta.consultaFilmes(le);
-        consulta.consultaCategorias(le);
-        consulta.consultaFilmeCategorias(le);
+        //consulta.consultaTodosFilmes(le);
+        //consulta.consultaCategorias(le);
+        //consulta.consultaFilmeCategorias(le);
+        //consulta.consultaMoviesList(le);
 
         //Splash Screen duration
         int secondsDelayed = 1;
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                startActivity(new Intent(splash_screen.this, dashboard.class));
+                startActivity(new Intent(SplashScreen.this, Dashboard.class));
                 finish();
             }
         }, secondsDelayed * 3000);
