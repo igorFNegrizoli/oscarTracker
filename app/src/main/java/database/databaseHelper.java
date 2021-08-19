@@ -472,7 +472,7 @@ public class databaseHelper extends SQLiteOpenHelper {
             db.insert(TABELA_CATEGORIA_FILME, null, movie_category_insert);
         }catch (Exception e){
             Log.i("INFO BANCODEDADOS", "Erro ao instanciar filmeCategoria (" +
-                    ""+Integer.toString(id_categoria)+","+Integer.toString(id_filme)+")"+ e.getMessage());
+                    ""+id_categoria+","+id_filme+")"+ e.getMessage());
         }
     }
 
@@ -486,7 +486,7 @@ public class databaseHelper extends SQLiteOpenHelper {
             db.insert(TABELA_CATEGORIA_FILME, null, movie_category_insert);
         }catch (Exception e){
             Log.i("INFO BANCODEDADOS", "Erro ao instanciar filmeCategoria (" +
-                    ""+Integer.toString(id_categoria)+","+Integer.toString(id_filme)+")"+ e.getMessage());
+                    ""+id_categoria+","+id_filme+")"+ e.getMessage());
         }
     }
 
@@ -498,7 +498,7 @@ public class databaseHelper extends SQLiteOpenHelper {
             db.insert(TABELA_CATEGORIA_FILME, null, movie_category_insert);
         }catch (Exception e){
             Log.i("INFO BANCODEDADOS", "Erro ao instanciar filmeCategoria (" +
-                    ""+Integer.toString(id_categoria)+","+Integer.toString(id_filme)+")"+ e.getMessage());
+                    ""+id_categoria+","+id_filme+")"+ e.getMessage());
         }
     }
 
