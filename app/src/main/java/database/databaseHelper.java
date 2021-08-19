@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class databaseHelper extends SQLiteOpenHelper {
-    public static int VERSION = 9;
+    public static int VERSION = 21;
     public static String NOME_DB = "OscarTrackerDB";
     public static String TABELA_FILME = "filme";
     public static String TABELA_CATEGORIA_FILME = "categoriaFilme";
@@ -215,9 +215,7 @@ public class databaseHelper extends SQLiteOpenHelper {
 
             instantiate_filme(db, "A Love Song for Latasha",
                     19,
-                    "\n" +
-                            "\n" +
-                            "The injustice surrounding the shooting death of 15-year-old " +
+                    "The injustice surrounding the shooting death of 15-year-old " +
                             "Latasha Harlins at a South Central Los Angeles store became a " +
                             "flashpoint for the city’s 1992 civil uprising.",
                     "image_latasha_cover");
@@ -505,7 +503,7 @@ public class databaseHelper extends SQLiteOpenHelper {
     public void populate_categoria_filme(SQLiteDatabase db){
         try{
             instantiate_categoria_filme(db, 1,  1, "Steven Yeun", "image_minari_actor");
-            instantiate_categoria_filme(db, 3,  1, "Yuh-Jung Youn", "image_minari_sup_actress");
+            instantiate_categoria_filme(db, 4,  1, "Yuh-Jung Youn", "image_minari_sup_actress");
             instantiate_categoria_filme(db, 8,  1, "Lee Isaac Chung", "image_minari_direct");
             instantiate_categoria_filme(db, 14, 1);
             instantiate_categoria_filme(db, 16, 1);
@@ -545,7 +543,7 @@ public class databaseHelper extends SQLiteOpenHelper {
             instantiate_categoria_filme(db, 23, 9);
             instantiate_categoria_filme(db, 20, 9);
             instantiate_categoria_filme(db, 11, 9);
-            instantiate_categoria_filme(db, 14, 11);
+            instantiate_categoria_filme(db, 14, 10);
             instantiate_categoria_filme(db, 16, 11);
             instantiate_categoria_filme(db, 8,  11, "Carey Mulligan", "image_promising_actress");
             instantiate_categoria_filme(db, 3,  11, "Emerald Fennell", "image_promising_direct");

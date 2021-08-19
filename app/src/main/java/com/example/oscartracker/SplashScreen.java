@@ -13,7 +13,7 @@ import android.util.Log;
 import android.util.Pair;
 
 public class SplashScreen extends AppCompatActivity {
-    SQLiteDatabase le;
+    SQLiteDatabase le, escreve;
     final consultas consulta = new consultas();
 
     @Override
@@ -23,12 +23,14 @@ public class SplashScreen extends AppCompatActivity {
 
         databaseHelper db = new databaseHelper(this);
         le = db.getReadableDatabase();
+        //escreve = db.getWritableDatabase();
         //consulta.consultaTodosFilmes(le);
-        //consulta.consultaCategorias(le);
+        //consulta.consultaTodosCategorias(le);
         //consulta.consultaTodosFilmeCategorias(le);
         //consulta.consultaMoviesList(le);
-        consulta.readMovieSelectedCategories(le, 1);
-
+        //consulta.readMovieSelectedCategories(le, 1);
+        //consulta.writeCategoriaSelecionada(escreve, "International Feature Film");
+        consulta.getCategoriesRemaining(le);
 
         //Splash Screen duration
         int secondsDelayed = 1;

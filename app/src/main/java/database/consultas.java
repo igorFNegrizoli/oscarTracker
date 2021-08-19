@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class consultas {
-    private void consultaTodosFilmes(SQLiteDatabase le){
+    public void consultaTodosFilmes(SQLiteDatabase le){
         try{
-            String consulta = "SELECT * FROM filme";
+            String consulta = "SELECT * FROM filme ORDER BY nome";
             Cursor cursor = le.rawQuery(consulta,null);
 
             int indiceID = cursor.getColumnIndex("id");
@@ -35,6 +35,9 @@ public class consultas {
                 String descricao = cursor.getString(indiceDescricao);
                 String caminhoImagem = cursor.getString(indiceCaminhoImagem);
                 String jaViu = cursor.getString(indiceJaViu);
+
+                Log.i("RESULTADO - ","ID: "+id+" Nome: "+nome
+                );
 
                 Log.i("RESULTADO - ","ID: "+id+" Nome: "+nome+" Duracao: "+duracao+"\n  Descricao: "+descricao+"\n" +
                         " Imagem: "+caminhoImagem+" JaViu: "+jaViu
@@ -161,21 +164,39 @@ public class consultas {
             Log.i("RESULTADO -", "ERRO NA QUERY");
             e.printStackTrace();
         }
-        /*
+
+
         for(ModelMoviesList movie: listMovies) {
-            Log.i("listMovies - ", " Nome: "+movie.getTituloFilme()+" Duracao: "+ movie.getDuracao() +"  Nomeacoes: "+ movie.getnIndicacoes() +
+            Log.i("RESULTADO - ", " Nome: "+movie.getNome()+" Duracao: "+ movie.getDuracao() +"  Nomeacoes: "+ movie.getnIndicacoes() +
                     " JaViu: "+movie.getJaViu());
         }
-        */
+
+
+
+
+
+
 
         return listMovies;
     }
 
     public void writeCategoriaSelecionada(SQLiteDatabase escreve, String nome_categoria){
         ContentValues data = new ContentValues();
-        data.put("selecionada", 0);
 
         try{
+            String consulta = "SELECT selecionada FROM categoria WHERE nome='"+nome_categoria+"'";
+            Cursor cursor = escreve.rawQuery(consulta,null);
+            int indiceSelecionada = cursor.getColumnIndex("selecionada");
+            cursor.moveToFirst();
+            int selecionada = cursor.getInt(indiceSelecionada);
+            cursor.close();
+
+            if(selecionada==0){
+                data.put("selecionada", 1);
+            }
+            else {
+                data.put("selecionada", 0);
+            }
             escreve.update("categoria", data, "nome= '"+nome_categoria+"'",null);
             Log.i("RESULTADOS -", "foi");
         }catch (Exception e){
@@ -270,5 +291,82 @@ public class consultas {
         */
 
         return listMovieNominations;
+    }
+
+    public Integer[] getMoviesRemaining(SQLiteDatabase le){
+        Integer[] numbers = new Integer[2];
+
+        try{
+            String consulta = "SELECT COUNT(unicos.ID) AS Numero, SUM(duracao) AS TempoTotal " +
+                    "FROM (SELECT DISTINCT filme.id AS ID, duracao " +
+                    "   FROM filme " +
+                    "   INNER JOIN categoriaFilme ON id_filme=filme.id " +
+                    "   INNER JOIN categoria ON id_categoria=categoria.id " +
+                    "   WHERE filme.jaViu=0 AND selecionada=1 " +
+                    "   ORDER BY filme.id) AS unicos ";
+
+            Cursor cursor = le.rawQuery(consulta,null);
+
+            int indiceNumero = cursor.getColumnIndex("Numero");
+            int indiceTempoTotal = cursor.getColumnIndex("TempoTotal");
+
+            cursor.moveToFirst();
+
+            while(!cursor.isAfterLast()){
+                numbers[0] = cursor.getInt(indiceNumero);
+                numbers[1] = cursor.getInt(indiceTempoTotal);
+
+                cursor.moveToNext();
+            }
+
+            cursor.close();
+        }catch (Exception e){
+            Log.i("RESULTADO -", "ERRO NA QUERY");
+            e.printStackTrace();
+        }
+
+        return numbers;
+    }
+
+    public List<String> getCategoriesRemaining (SQLiteDatabase le){
+        List<String> listCategoriesRemaining = new ArrayList<>();
+
+        try{
+            String consulta = "SELECT categoria.nome, SUM(1-jaViu) as jaViu " +
+                    "FROM categoria " +
+                    "INNER JOIN categoriaFilme ON categoria.id=id_categoria " +
+                    "INNER JOIN filme ON filme.id=id_filme " +
+                    "WHERE selecionada=1 " +
+                    "GROUP BY categoria.nome ";
+
+            Cursor cursor = le.rawQuery(consulta,null);
+
+            int indiceNome = cursor.getColumnIndex("nome");
+            int indicejaViu = cursor.getColumnIndex("jaViu");
+
+            cursor.moveToFirst();
+
+            while(!cursor.isAfterLast()){
+                int falta_ver = cursor.getInt(indicejaViu);
+                if(falta_ver>0){
+                    listCategoriesRemaining.add(cursor.getString(indiceNome));
+                }
+
+                cursor.moveToNext();
+            }
+
+            cursor.close();
+        }catch (Exception e){
+            Log.i("RESULTADO -", "ERRO NA QUERY");
+            e.printStackTrace();
+        }
+
+        /*
+        for(String category: listCategoriesRemaining) {
+            Log.i("RESULTADO - ", "Categoria: "+category);
+        }
+        */
+
+        return listCategoriesRemaining;
     }
 }
