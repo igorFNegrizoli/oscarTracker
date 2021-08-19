@@ -97,5 +97,6 @@ public class ActivityMoviesList extends AppCompatActivity {
         databaseHelper db = new databaseHelper(this);
         le = db.getReadableDatabase();
         this.listMovies = consulta.consultaMoviesList(le);
+        le.close();
     }
 }

@@ -9,6 +9,8 @@ import android.os.Bundle;
 import database.consultas;
 import database.databaseHelper;
 import android.os.Handler;
+import android.util.Log;
+import android.util.Pair;
 
 public class SplashScreen extends AppCompatActivity {
     SQLiteDatabase le;
@@ -23,8 +25,10 @@ public class SplashScreen extends AppCompatActivity {
         le = db.getReadableDatabase();
         //consulta.consultaTodosFilmes(le);
         //consulta.consultaCategorias(le);
-        //consulta.consultaFilmeCategorias(le);
+        //consulta.consultaTodosFilmeCategorias(le);
         //consulta.consultaMoviesList(le);
+        consulta.readMovieSelectedCategories(le, 1);
+
 
         //Splash Screen duration
         int secondsDelayed = 1;

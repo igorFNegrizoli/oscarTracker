@@ -25,9 +25,12 @@ public class Dashboard extends AppCompatActivity {
         //Typeface type = Typeface.createFromAsset(getAssets(),"fonts/arial.ttf");
         //TextView.setTypeface(type);
 
+        /*
         databaseHelper db = new databaseHelper(this);
         escreve = db.getWritableDatabase();
         le = db.getReadableDatabase();
+
+         */
     }
 
     public void open_movies_list(View view){
