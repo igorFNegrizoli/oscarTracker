@@ -10,4 +10,5 @@
     <color name="yellow">#FFFFEF58</color>
     <color name="pearl_white">#FFD9DDE0</color>
     <color name="bg_black">#FF202020</color>
+    <color name="transparent">#00000000z</color>
 </resources>

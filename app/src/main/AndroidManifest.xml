@@ -9,12 +9,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        <activity android:name=".SplashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        android:theme="@style/mainTheme">
+        <activity android:name=".SplashScreen"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+
         </activity>
         <activity
             android:name=".Dashboard"
@@ -28,7 +27,13 @@
         <activity
             android:name=".Movies"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".Picks"
             android:screenOrientation="portrait"
