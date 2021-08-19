@@ -4,8 +4,10 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.util.Pair;
 import android.view.Display;
 
+import com.example.oscartracker.movie.ModelMovieNomination;
 import com.example.oscartracker.movies_list.ModelMoviesList;
 
 import java.util.ArrayList;
@@ -169,7 +171,6 @@ public class consultas {
         return listMovies;
     }
 
-
     public void writeCategoriaSelecionada(SQLiteDatabase escreve, String nome_categoria){
         ContentValues data = new ContentValues();
         data.put("selecionada", 0);
@@ -181,5 +182,93 @@ public class consultas {
             Log.i("RESULTADOS -", "ERRO");
             e.printStackTrace();
         }
+    }
+
+    public Pair<String[], Integer[]> readThisMovie(SQLiteDatabase le, String nome_filme){
+        String[] movieStrings = new String[2];
+        Integer[] movieInts = new Integer[2];
+
+        try{
+            String consulta = "SELECT id, duracao, descricao, caminhoImagem " +
+                    "FROM filme " +
+                    "WHERE filme.nome='"+nome_filme+"'";
+
+            Cursor cursor = le.rawQuery(consulta,null);
+
+            int indiceID = cursor.getColumnIndex("id");
+            int indiceDuracao = cursor.getColumnIndex("duracao");
+            int indiceDescricao = cursor.getColumnIndex("descricao");
+            int indiceCaminhoImagem = cursor.getColumnIndex("caminhoImagem");
+
+            cursor.moveToFirst();
+
+            while(!cursor.isAfterLast()){
+                movieInts[0] = cursor.getInt(indiceID);
+                movieInts[1] = cursor.getInt(indiceDuracao);
+                movieStrings[0] = cursor.getString(indiceDescricao);
+                movieStrings[1] = cursor.getString(indiceCaminhoImagem);
+
+                cursor.moveToNext();
+            }
+
+            cursor.close();
+        }catch (Exception e){
+            Log.i("RESULTADO -", "ERRO NA QUERY");
+            e.printStackTrace();
+        }
+        /*
+        for(ModelMoviesList movie: listMovies) {
+            Log.i("listMovies - ", " Nome: "+movie.getTituloFilme()+" Duracao: "+ movie.getDuracao() +"  Nomeacoes: "+ movie.getnIndicacoes() +
+                    " JaViu: "+movie.getJaViu());
+        }
+        */
+
+        return new Pair<String[], Integer[]>(movieStrings, movieInts);
+    }
+
+    public List<ModelMovieNomination> readMovieSelectedCategories(SQLiteDatabase le, int movie_id){
+        List<ModelMovieNomination> listMovieNominations = new ArrayList<>();
+
+        try{
+            String consulta = "SELECT categoria.nome, rating, indicado, caminhoImagemIndicado " +
+                    "FROM categoriaFilme, categoria " +
+                    "WHERE id_filme="+movie_id+" AND id_categoria=id AND selecionada=1";
+
+            Cursor cursor = le.rawQuery(consulta,null);
+
+            int indiceNome = cursor.getColumnIndex("nome");
+            int indiceRating = cursor.getColumnIndex("rating");
+            int indiceIndicado = cursor.getColumnIndex("indicado");
+            int indiceImagem = cursor.getColumnIndex("caminhoImagemIndicado");
+
+            cursor.moveToFirst();
+
+            while(!cursor.isAfterLast()){
+                ModelMovieNomination new_nomination = new ModelMovieNomination();
+
+                new_nomination.setNome_categoria(cursor.getString(indiceNome));
+                new_nomination.setRating(cursor.getInt(indiceRating));
+                new_nomination.setIndicado(cursor.getString(indiceIndicado));
+                new_nomination.setCaminho_imagem_indicado(cursor.getString(indiceImagem));
+
+                listMovieNominations.add(new_nomination);
+
+                cursor.moveToNext();
+            }
+
+            cursor.close();
+        }catch (Exception e){
+            Log.i("RESULTADO -", "ERRO NA QUERY");
+            e.printStackTrace();
+        }
+
+        /*
+        for(ModelMovieNomination nomination: listMovieNominations) {
+            Log.i("listMovies - ", "Categoria: "+nomination.getNome_categoria()+" Rating: "+nomination.getRating()+"\n" +
+                    "Indicado: "+nomination.getIndicado()+" Imagem: "+nomination.getCaminho_imagem_indicado());
+        }
+        */
+
+        return listMovieNominations;
     }
 }
