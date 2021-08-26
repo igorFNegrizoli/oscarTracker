@@ -1,5 +1,6 @@
 package com.example.oscartracker.movie;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Pair;
@@ -16,9 +17,10 @@ public class ModelMovie {
     String nome_filme;
     String decricao;
     String duracao;
+    boolean jaViu;
     List<ModelMovieNomination> indicacoes = new ArrayList<>();
     private int filme_id;
-    private SQLiteDatabase le;
+    private SQLiteDatabase le, escreve;
     private final consultas consulta = new consultas();
 
     public ModelMovie() {
@@ -35,8 +37,26 @@ public class ModelMovie {
         this.caminho_imagem = pair.first[1];
         this.filme_id = pair.second[0];
         this.duracao = utils.duracaoToString(pair.second[1]);
+        if(pair.second[2]==0){
+            this.jaViu=false;
+        }else{
+            this.jaViu=true;
+        }
+
         this.indicacoes = consulta.readMovieSelectedCategories(le, filme_id);
         le.close();
+    }
+
+    public void saveInfoToDB(Context context){
+        databaseHelper db = new databaseHelper(context);
+        escreve = db.getWritableDatabase();
+
+        consulta.writeFilmeJaViu(escreve, filme_id, jaViu);
+        for(ModelMovieNomination indicacao: indicacoes){
+            consulta.writeNotaFilmeCategoria(escreve, filme_id, indicacao.getNome_categoria(), indicacao.getRating());
+        }
+
+        escreve.close();
     }
 
     public String getCaminho_imagem() {
@@ -77,5 +97,13 @@ public class ModelMovie {
 
     public void setIndicacoes(List<ModelMovieNomination> indicacoes) {
         this.indicacoes = indicacoes;
+    }
+
+    public boolean isJaViu() {
+        return jaViu;
+    }
+
+    public void setJaViu(boolean jaViu) {
+        this.jaViu = jaViu;
     }
 }

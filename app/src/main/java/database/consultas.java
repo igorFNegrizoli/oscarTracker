@@ -207,10 +207,10 @@ public class consultas {
 
     public Pair<String[], Integer[]> readThisMovie(SQLiteDatabase le, String nome_filme){
         String[] movieStrings = new String[2];
-        Integer[] movieInts = new Integer[2];
+        Integer[] movieInts = new Integer[3];
 
         try{
-            String consulta = "SELECT id, duracao, descricao, caminhoImagem " +
+            String consulta = "SELECT id, duracao, descricao, caminhoImagem, jaViu " +
                     "FROM filme " +
                     "WHERE filme.nome='"+nome_filme+"'";
 
@@ -220,29 +220,28 @@ public class consultas {
             int indiceDuracao = cursor.getColumnIndex("duracao");
             int indiceDescricao = cursor.getColumnIndex("descricao");
             int indiceCaminhoImagem = cursor.getColumnIndex("caminhoImagem");
+            int indiceJaViu = cursor.getColumnIndex("jaViu");
 
             cursor.moveToFirst();
 
             while(!cursor.isAfterLast()){
                 movieInts[0] = cursor.getInt(indiceID);
                 movieInts[1] = cursor.getInt(indiceDuracao);
+                movieInts[2] = cursor.getInt(indiceJaViu);
                 movieStrings[0] = cursor.getString(indiceDescricao);
                 movieStrings[1] = cursor.getString(indiceCaminhoImagem);
 
                 cursor.moveToNext();
             }
 
+            //Log.i("RESULTADO - ", " Nome: "+ nome_filme +" Duracao: "+ movieInts[1] +"  jaViu: "+ movieInts[2]);
+
             cursor.close();
         }catch (Exception e){
             Log.i("RESULTADO -", "ERRO NA QUERY");
             e.printStackTrace();
         }
-        /*
-        for(ModelMoviesList movie: listMovies) {
-            Log.i("listMovies - ", " Nome: "+movie.getTituloFilme()+" Duracao: "+ movie.getDuracao() +"  Nomeacoes: "+ movie.getnIndicacoes() +
-                    " JaViu: "+movie.getJaViu());
-        }
-        */
+
 
         return new Pair<String[], Integer[]>(movieStrings, movieInts);
     }
@@ -288,7 +287,9 @@ public class consultas {
             Log.i("listMovies - ", "Categoria: "+nomination.getNome_categoria()+" Rating: "+nomination.getRating()+"\n" +
                     "Indicado: "+nomination.getIndicado()+" Imagem: "+nomination.getCaminho_imagem_indicado());
         }
-        */
+
+         */
+
 
         return listMovieNominations;
     }
@@ -368,5 +369,40 @@ public class consultas {
         */
 
         return listCategoriesRemaining;
+    }
+
+    public void writeNotaFilmeCategoria (SQLiteDatabase escreve, int id_filme, String nome_categoria, int rating){
+        ContentValues data = new ContentValues();
+
+        try{
+            String consulta = "SELECT id FROM categoria WHERE nome='"+nome_categoria+"'";
+            Cursor cursor = escreve.rawQuery(consulta,null);
+            int indiceID = cursor.getColumnIndex("id");
+            cursor.moveToFirst();
+            int id_categoria = cursor.getInt(indiceID);
+            cursor.close();
+
+            data.put("rating", rating);
+
+            escreve.update("categoriaFilme", data, "id_categoria= '"+id_categoria+"' AND id_filme='"+id_filme+"'",null);
+            Log.i("RESULTADO WRITE -", "foi");
+        }catch (Exception e){
+            Log.i("RESULTADO WRITE -", "ERRO");
+            e.printStackTrace();
+        }
+
+    }
+
+    public void writeFilmeJaViu (SQLiteDatabase escreve, int id_filme, boolean jaViu){
+        ContentValues data = new ContentValues();
+
+        try{
+            data.put("jaViu", jaViu);
+            escreve.update("filme", data, "id= '"+id_filme+"'",null);
+            Log.i("RESULTADO WRITE -", "foi");
+        }catch (Exception e){
+            Log.i("RESULTADO WRITE -", "ERRO");
+            e.printStackTrace();
+        }
     }
 }

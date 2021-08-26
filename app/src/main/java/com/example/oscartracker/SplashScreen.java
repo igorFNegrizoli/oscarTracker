@@ -23,14 +23,27 @@ public class SplashScreen extends AppCompatActivity {
 
         databaseHelper db = new databaseHelper(this);
         le = db.getReadableDatabase();
+        escreve = db.getWritableDatabase();
+
         //escreve = db.getWritableDatabase();
-        //consulta.consultaTodosFilmes(le);
+        consulta.consultaTodosFilmes(le);
         //consulta.consultaTodosCategorias(le);
         //consulta.consultaTodosFilmeCategorias(le);
         //consulta.consultaMoviesList(le);
-        //consulta.readMovieSelectedCategories(le, 1);
+
+        /*
+        consulta.readThisMovie(le,"Minari");
+        consulta.readMovieSelectedCategories(le, 1);
+
+        consulta.writeFilmeJaViu(escreve, 1, false);
+        consulta.writeNotaFilmeCategoria(escreve, 1, "Best Picture", 5);
+
+        consulta.readThisMovie(le, "Minari");
+        consulta.readMovieSelectedCategories(le, 1);
+        */
+
         //consulta.writeCategoriaSelecionada(escreve, "International Feature Film");
-        consulta.getCategoriesRemaining(le);
+        //consulta.getCategoriesRemaining(le);
 
         //Splash Screen duration
         int secondsDelayed = 1;
