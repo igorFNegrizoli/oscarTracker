@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
@@ -42,6 +44,10 @@ public class ActivityMoviesList extends AppCompatActivity {
             }
         });
         */
+
+        //Transparent action bar
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         recyclerView = findViewById(R.id.recyclerView);
         this.populateMovies();
