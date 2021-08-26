@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
@@ -43,6 +45,10 @@ public class ActivityMoviesList extends AppCompatActivity {
         });
         */
 
+        //Transparent action bar
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         recyclerView = findViewById(R.id.recyclerView);
         this.populateMovies();
         AdapterMoviesList adapter = new AdapterMoviesList(listMovies);
@@ -50,6 +56,7 @@ public class ActivityMoviesList extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
+
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(
                         getApplicationContext(),
@@ -58,13 +65,7 @@ public class ActivityMoviesList extends AppCompatActivity {
                             @Override
                             public void onItemClick(View view, int position) {
                                 ModelMoviesList filme = listMovies.get(position);
-                                Toast.makeText(getApplicationContext(), "Curto", Toast.LENGTH_SHORT).show();
-                            }
-
-                            @Override
-                            public void onLongItemClick(View view, int position) {
-                                ModelMoviesList filme = listMovies.get(position);
-                                Toast.makeText(getApplicationContext(), "Longo", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Curto: " + filme.getNome(), Toast.LENGTH_SHORT).show();
                             }
 
                             @Override

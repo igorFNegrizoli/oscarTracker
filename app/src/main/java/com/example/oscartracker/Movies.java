@@ -1,11 +1,15 @@
 package com.example.oscartracker;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -24,6 +28,10 @@ public class Movies extends AppCompatActivity {
         //TextView.setTypeface(type);
         //View imagevi = (ImageView) findViewById(R.id.imageView0);
         //imagevi.setEnabled(false);
+
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
     }
 
     public static void dimBehind(PopupWindow popupWindow) {
