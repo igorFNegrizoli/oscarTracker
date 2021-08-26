@@ -65,7 +65,7 @@ public class ActivityMoviesList extends AppCompatActivity {
                             @Override
                             public void onItemClick(View view, int position) {
                                 ModelMoviesList filme = listMovies.get(position);
-                                Toast.makeText(getApplicationContext(), "Curto: " + filme.getNome(), Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getApplicationContext(), "Curto: " + filme.getNome(), Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
