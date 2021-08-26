@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     android:background="@color/bg_black"
     android:onClick="onButtonShowPopupWindowClick"
-    tools:context=".Movies"
+    tools:context=".movie.Movie"
     android:fitsSystemWindows="true">
 
 
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageMovie"
         android:layout_width="0dp"
         android:layout_height="229dp"
         android:baselineAlignBottom="false"
@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/image_minari_cover" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/movieTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -36,10 +36,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageMovie" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/movieDescription"
         android:layout_width="373dp"
         android:layout_height="59dp"
         android:layout_marginTop="8dp"
@@ -50,7 +50,7 @@
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/movieTitle" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -59,14 +59,14 @@
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintEnd_toStartOf="@+id/movieDuration"
         app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/movieDescription"
         app:srcCompat="@drawable/icon_clock" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/movieDuration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

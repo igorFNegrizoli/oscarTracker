@@ -1,9 +1,8 @@
-package com.example.oscartracker;
+package com.example.oscartracker.movie;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
-import android.os.Build;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -14,24 +13,51 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.oscartracker.R;
 
-public class Movies extends AppCompatActivity {
+import java.io.File;
+import java.time.Duration;
+
+
+public class Movie extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movies);
+        setContentView(R.layout.activity_movie);
         //Typeface type = Typeface.createFromAsset(getAssets(),"fonts/arial.ttf");
         //TextView.setTypeface(type);
         //View imagevi = (ImageView) findViewById(R.id.imageView0);
         //imagevi.setEnabled(false);
 
+        //content behind status bar and navigation bar
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
+        //TextView titleTextView = (TextView)findViewById(R.id.myAwesomeTextView);
+        ModelMovie filme = new ModelMovie();
+        filme.getModelMovieFromDB(this, getIntent().getStringExtra("nomeFilme"));
+
+        //Setting text atribbutes
+        TextView titleTextView = (TextView)findViewById(R.id.movieTitle);
+        titleTextView.setText(filme.getNome_filme());
+
+        TextView descriptionTextView = (TextView)findViewById(R.id.movieDescription);
+        descriptionTextView.setText(filme.getDecricao());
+
+        TextView durationTextView = (TextView)findViewById(R.id.movieDuration);
+        durationTextView.setText(filme.getDuracao());
+
+        File imgFile = new File(filme.getCaminho_imagem());
+        if(imgFile.exists()){
+            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+            ImageView myImage = (ImageView) findViewById(R.id.imageMovie);
+            myImage.setImageBitmap(myBitmap);
+        }
     }
 
     public static void dimBehind(PopupWindow popupWindow) {

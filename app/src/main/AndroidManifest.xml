@@ -29,7 +29,7 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".Movies"
+            android:name=".movie.Movie"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
 
