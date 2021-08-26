@@ -56,6 +56,7 @@ public class ActivityMoviesList extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
+
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(
                         getApplicationContext(),
@@ -64,13 +65,7 @@ public class ActivityMoviesList extends AppCompatActivity {
                             @Override
                             public void onItemClick(View view, int position) {
                                 ModelMoviesList filme = listMovies.get(position);
-                                Toast.makeText(getApplicationContext(), "Curto", Toast.LENGTH_SHORT).show();
-                            }
-
-                            @Override
-                            public void onLongItemClick(View view, int position) {
-                                ModelMoviesList filme = listMovies.get(position);
-                                Toast.makeText(getApplicationContext(), "Longo", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Curto: " + filme.getNome(), Toast.LENGTH_SHORT).show();
                             }
 
                             @Override

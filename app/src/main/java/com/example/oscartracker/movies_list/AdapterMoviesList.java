@@ -41,10 +41,8 @@ public class AdapterMoviesList extends RecyclerView.Adapter<AdapterMoviesList.My
         holder.nIndicacoes.setText(movie.getnIndicacoes());
 
         if(movie.getJaViu()){
-            //Log.i("listMoviesTrue - ", " Nome: "+movie.getNome()+" Duracao: "+ movie.getDuracao() +"  Nomeacoes: "+ movie.getnIndicacoes() + " JaViu: "+movie.getJaViu());
             holder.jaViu.setImageResource(R.drawable.icon_checknobox_true);
         }else{
-            //Log.i("listMoviesFalse - ", " Nome: "+movie.getNome()+" Duracao: "+ movie.getDuracao() +"  Nomeacoes: "+ movie.getnIndicacoes() + " JaViu: "+movie.getJaViu());
             holder.jaViu.setImageResource(R.drawable.icon_checknobox_false);
         }
     }
