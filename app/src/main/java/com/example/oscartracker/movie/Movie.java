@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -51,13 +52,10 @@ public class Movie extends AppCompatActivity {
 
         TextView durationTextView = (TextView)findViewById(R.id.movieDuration);
         durationTextView.setText(filme.getDuracao());
-
-        File imgFile = new File(filme.getCaminho_imagem());
-        if(imgFile.exists()){
-            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-            ImageView myImage = (ImageView) findViewById(R.id.imageMovie);
-            myImage.setImageBitmap(myBitmap);
-        }
+        
+        int resId = this.getResources().getIdentifier(filme.getCaminho_imagem(), "drawable", this.getPackageName());
+        ImageView myImage = (ImageView) findViewById(R.id.imageMovie);
+        myImage.setImageResource(resId);
     }
 
     public static void dimBehind(PopupWindow popupWindow) {

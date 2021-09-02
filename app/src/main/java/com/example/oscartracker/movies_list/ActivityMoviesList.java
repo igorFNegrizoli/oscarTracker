@@ -44,10 +44,6 @@ public class ActivityMoviesList extends AppCompatActivity {
         });
         */
 
-        //Transparent action bar
-        Window w = getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-
         recyclerView = findViewById(R.id.recyclerView);
         this.populateMovies();
         AdapterMoviesList adapter = new AdapterMoviesList(listMovies);
