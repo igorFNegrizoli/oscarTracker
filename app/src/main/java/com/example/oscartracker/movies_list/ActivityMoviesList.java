@@ -4,15 +4,13 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.oscartracker.movie.Movie;
+import com.example.oscartracker.movie.ActivityMovie;
 import com.example.oscartracker.R;
 import com.example.oscartracker.RecyclerItemClickListener;
 
@@ -60,7 +58,7 @@ public class ActivityMoviesList extends AppCompatActivity {
                             @Override
                             public void onItemClick(View view, int position) {
                                 ModelMoviesList filme = listMovies.get(position);
-                                Intent i = new Intent(ActivityMoviesList.this, Movie.class);
+                                Intent i = new Intent(ActivityMoviesList.this, ActivityMovie.class);
                                 i.putExtra("nomeFilme", filme.getNome());
                                 startActivity(i);
                                 //Toast.makeText(getApplicationContext(), "Curto: " + filme.getNome(), Toast.LENGTH_SHORT).show();

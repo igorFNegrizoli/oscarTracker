@@ -24,7 +24,7 @@ import java.io.File;
 import java.time.Duration;
 
 
-public class Movie extends AppCompatActivity {
+public class ActivityMovie extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class Movie extends AppCompatActivity {
 
         TextView durationTextView = (TextView)findViewById(R.id.movieDuration);
         durationTextView.setText(filme.getDuracao());
-        
+
         int resId = this.getResources().getIdentifier(filme.getCaminho_imagem(), "drawable", this.getPackageName());
         ImageView myImage = (ImageView) findViewById(R.id.imageMovie);
         myImage.setImageResource(resId);

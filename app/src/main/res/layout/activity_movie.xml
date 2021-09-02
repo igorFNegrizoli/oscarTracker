@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/bg_black"
     android:onClick="onButtonShowPopupWindowClick"
-    tools:context=".movie.Movie"
+    tools:context=".movie.ActivityMovie"
     android:fitsSystemWindows="true">
 
 
