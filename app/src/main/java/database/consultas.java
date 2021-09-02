@@ -180,25 +180,17 @@ public class consultas {
         return listMovies;
     }
 
-    public void writeCategoriaSelecionada(SQLiteDatabase escreve, String nome_categoria){
+    public void writeCategoriaSelecionada(SQLiteDatabase escreve, String nome_categoria, boolean isChecked){
         ContentValues data = new ContentValues();
 
         try{
-            String consulta = "SELECT selecionada FROM categoria WHERE nome='"+nome_categoria+"'";
-            Cursor cursor = escreve.rawQuery(consulta,null);
-            int indiceSelecionada = cursor.getColumnIndex("selecionada");
-            cursor.moveToFirst();
-            int selecionada = cursor.getInt(indiceSelecionada);
-            cursor.close();
-
-            if(selecionada==0){
+            if(isChecked){
                 data.put("selecionada", 1);
             }
             else {
                 data.put("selecionada", 0);
             }
             escreve.update("categoria", data, "nome= '"+nome_categoria+"'",null);
-            Log.i("RESULTADOS -", "foi");
         }catch (Exception e){
             Log.i("RESULTADOS -", "ERRO");
             e.printStackTrace();
@@ -208,6 +200,8 @@ public class consultas {
     public Pair<String[], Integer[]> readThisMovie(SQLiteDatabase le, String nome_filme){
         String[] movieStrings = new String[2];
         Integer[] movieInts = new Integer[3];
+
+        nome_filme = nome_filme.replace("'", "''");
 
         try{
             String consulta = "SELECT id, duracao, descricao, caminhoImagem, jaViu " +
@@ -404,5 +398,31 @@ public class consultas {
             Log.i("RESULTADO WRITE -", "ERRO");
             e.printStackTrace();
         }
+    }
+
+    public boolean readCategoriaSelecionada(SQLiteDatabase escreve, String nome_categoria){
+        ContentValues data = new ContentValues();
+        boolean selecionada = true;
+
+        try{
+            String consulta = "SELECT selecionada FROM categoria WHERE nome='"+nome_categoria+"'";
+            Cursor cursor = escreve.rawQuery(consulta,null);
+            int indiceSelecionada = cursor.getColumnIndex("selecionada");
+            cursor.moveToFirst();
+            int selecionada_int = cursor.getInt(indiceSelecionada);
+            cursor.close();
+
+            if(selecionada_int==0){
+                selecionada = false;
+            }
+            else {
+                selecionada = true;
+            }
+        }catch (Exception e){
+            Log.i("RESULTADOS -", "ERRO");
+            e.printStackTrace();
+        }
+
+        return selecionada;
     }
 }

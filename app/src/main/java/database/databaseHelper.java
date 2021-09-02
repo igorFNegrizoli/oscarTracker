@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class databaseHelper extends SQLiteOpenHelper {
-    public static int VERSION = 21;
+    public static int VERSION = 26;
     public static String NOME_DB = "OscarTrackerDB";
     public static String TABELA_FILME = "filme";
     public static String TABELA_CATEGORIA_FILME = "categoriaFilme";

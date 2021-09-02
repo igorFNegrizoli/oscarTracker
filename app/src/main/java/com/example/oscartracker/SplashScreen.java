@@ -26,7 +26,7 @@ public class SplashScreen extends AppCompatActivity {
         escreve = db.getWritableDatabase();
 
         //escreve = db.getWritableDatabase();
-        consulta.consultaTodosFilmes(le);
+        //consulta.consultaTodosFilmes(le);
         //consulta.consultaTodosCategorias(le);
         //consulta.consultaTodosFilmeCategorias(le);
         //consulta.consultaMoviesList(le);

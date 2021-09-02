@@ -27,14 +27,15 @@
         <activity
             android:name=".settings.ActivitySettingsScreen"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            tools:ignore="LockedOrientationActivity">
+        </activity>
+
         <activity
             android:name=".movie.ActivityMovie"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
 
         </activity>
-
         <activity
             android:name=".Picks"
             android:screenOrientation="portrait"
@@ -42,7 +43,13 @@
         <activity
             android:name=".Categories"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+            tools:ignore="LockedOrientationActivity">
+        </activity>
+        <activity
+            android:name=".CategoriesCard"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+        </activity>
         <activity
             android:name=".movies_list.ActivityMoviesList"
             android:screenOrientation="portrait"
