@@ -30,6 +30,7 @@ public class SplashScreen extends AppCompatActivity {
         //consulta.consultaTodosCategorias(le);
         //consulta.consultaTodosFilmeCategorias(le);
         //consulta.consultaMoviesList(le);
+        consulta.readSelectedCategories(le);
 
         /*
         consulta.readThisMovie(le,"Minari");

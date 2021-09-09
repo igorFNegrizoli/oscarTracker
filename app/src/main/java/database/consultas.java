@@ -165,17 +165,12 @@ public class consultas {
             e.printStackTrace();
         }
 
-
-        for(ModelMoviesList movie: listMovies) {
+        /*for(ModelMoviesList movie: listMovies) {
             Log.i("RESULTADO - ", " Nome: "+movie.getNome()+" Duracao: "+ movie.getDuracao() +"  Nomeacoes: "+ movie.getnIndicacoes() +
                     " JaViu: "+movie.getJaViu());
         }
 
-
-
-
-
-
+         */
 
         return listMovies;
     }
@@ -424,5 +419,83 @@ public class consultas {
         }
 
         return selecionada;
+    }
+
+    public List<Pair<String,Integer>> readCategoriaFilmesNotas(SQLiteDatabase le, String nome_categoria){
+        List<Pair<String,Integer>> listFilmesNotas = new ArrayList<>();
+
+        try{
+            String consulta = "SELECT filme.nome, rating " +
+                    "FROM categoria " +
+                    "INNER JOIN categoriaFilme ON categoria.id=id_categoria " +
+                    "INNER JOIN filme ON filme.id=id_filme " +
+                    "WHERE categoria.nome = '"+ nome_categoria + "' ";
+
+            Cursor cursor = le.rawQuery(consulta,null);
+
+            int indiceNome = cursor.getColumnIndex("nome");
+            int indiceRating = cursor.getColumnIndex("rating");
+
+            cursor.moveToFirst();
+
+            while(!cursor.isAfterLast()){
+                Pair<String,Integer> par = new Pair(cursor.getString(indiceNome),cursor.getInt(indiceRating));
+
+                listFilmesNotas.add(par);
+
+                //Log.i("RESULTADO -", "string: "+par.first+ " int: "+par.second);
+
+                cursor.moveToNext();
+            }
+
+            cursor.close();
+        }catch (Exception e){
+            Log.i("RESULTADO -", "ERRO NA QUERY");
+            e.printStackTrace();
+        }
+
+        /*
+        for(String category: listCategoriesRemaining) {
+            Log.i("RESULTADO - ", "Categoria: "+category);
+        }
+        */
+
+        return listFilmesNotas;
+    }
+
+    public List<String> readSelectedCategories(SQLiteDatabase le){
+        List<String> listSelectedCategories = new ArrayList<>();
+
+        try{
+            String consulta = "SELECT categoria.nome " +
+                    "FROM categoria " +
+                    "WHERE selecionada=1 " +
+                    "GROUP BY categoria.nome ";
+
+            Cursor cursor = le.rawQuery(consulta,null);
+
+            int indiceNome = cursor.getColumnIndex("nome");
+
+            cursor.moveToFirst();
+
+            while(!cursor.isAfterLast()){
+                listSelectedCategories.add(cursor.getString(indiceNome));
+
+                cursor.moveToNext();
+            }
+
+            cursor.close();
+        }catch (Exception e){
+            Log.i("RESULTADO -", "ERRO NA QUERY");
+            e.printStackTrace();
+        }
+
+        /*
+        for(String category: listCategoriesRemaining) {
+            Log.i("RESULTADO - ", "Categoria: "+category);
+        }
+        */
+
+        return listSelectedCategories;
     }
 }
