@@ -1,6 +1,8 @@
 package com.example.oscartracker.movie;
 
 import android.content.Context;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -17,14 +20,28 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oscartracker.R;
+import com.example.oscartracker.RecyclerItemClickListener;
+import com.example.oscartracker.movies_list.ActivityMoviesList;
+import com.example.oscartracker.movies_list.AdapterMoviesList;
+import com.example.oscartracker.movies_list.ModelMoviesList;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
+import database.consultas;
+import database.databaseHelper;
 
 
 public class ActivityMovie extends AppCompatActivity {
+
+    private List<ModelMovieNomination> listNominees = new ArrayList<>();
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +73,37 @@ public class ActivityMovie extends AppCompatActivity {
         int resId = this.getResources().getIdentifier(filme.getCaminho_imagem(), "drawable", this.getPackageName());
         ImageView myImage = (ImageView) findViewById(R.id.imageMovie);
         myImage.setImageResource(resId);
+
+        //Set recycler view
+        recyclerView = findViewById(R.id.recyclerViewNominations);
+        this.listNominees = filme.getIndicacoes();
+        AdapterNominee adapter = new AdapterNominee(listNominees);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(adapter);
+
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(
+                        getApplicationContext(),
+                        recyclerView,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                ModelMovieNomination nomination = listNominees.get(position);
+                                //Intent i = new Intent(ActivityMoviesList.this, ActivityMovie.class);
+                                //i.putExtra("nomeFilme", filme.getNome());
+                                //startActivity(i);
+                                Toast.makeText(getApplicationContext(), "Curto: " + nomination.getIndicado(), Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            }
+                        }
+                )
+        );
     }
 
     public static void dimBehind(PopupWindow popupWindow) {
@@ -100,6 +148,6 @@ public class ActivityMovie extends AppCompatActivity {
                 return true;
             }
         });
-
     }
+
 }
