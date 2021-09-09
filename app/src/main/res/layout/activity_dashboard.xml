@@ -323,14 +323,6 @@
             android:onClick="open_categories"
             app:srcCompat="@drawable/icon_oscars" />
 
-        <ImageView
-            android:id="@+id/imageView29"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="open_picks"
-            app:srcCompat="@drawable/icon_choice" />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
