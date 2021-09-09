@@ -1,27 +1,33 @@
-package com.example.oscartracker;
+package com.example.oscartracker.dashboard;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.oscartracker.Categories;
+import com.example.oscartracker.Picks;
+import com.example.oscartracker.R;
 import com.example.oscartracker.movies_list.ActivityMoviesList;
 import com.example.oscartracker.settings.ActivitySettingsScreen;
 
+import database.consultas;
 import database.databaseHelper;
 
 
-public class Dashboard extends AppCompatActivity {
-    private SQLiteDatabase escreve;
-    private SQLiteDatabase le;
+public class ActivityDashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        setFields(this);
+
         //Typeface type = Typeface.createFromAsset(getAssets(),"fonts/arial.ttf");
         //TextView.setTypeface(type);
 
@@ -31,6 +37,27 @@ public class Dashboard extends AppCompatActivity {
         le = db.getReadableDatabase();
 
          */
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        setFields(this);
+    }
+
+    private void setFields(Context context){
+        TextView moviesRemaining = findViewById(R.id.textView62);
+        TextView timeRemaining = findViewById(R.id.textView63);
+        TextView categoriesRemaining = findViewById(R.id.textView64);
+
+        ModelDashboard model = new ModelDashboard();
+        model.getModelDashboardFromDB(context);
+
+        moviesRemaining.setText(model.movies_remaining);
+        timeRemaining.setText(model.time_remaining);
+        categoriesRemaining.setText(model.num_categories_remaining_text);
+
     }
 
     public void open_movies_list(View view){

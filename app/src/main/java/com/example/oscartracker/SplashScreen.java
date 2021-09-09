@@ -9,8 +9,8 @@ import android.os.Bundle;
 import database.consultas;
 import database.databaseHelper;
 import android.os.Handler;
-import android.util.Log;
-import android.util.Pair;
+
+import com.example.oscartracker.dashboard.ActivityDashboard;
 
 public class SplashScreen extends AppCompatActivity {
     SQLiteDatabase le, escreve;
@@ -49,7 +49,7 @@ public class SplashScreen extends AppCompatActivity {
         int secondsDelayed = 1;
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                startActivity(new Intent(SplashScreen.this, Dashboard.class));
+                startActivity(new Intent(SplashScreen.this, ActivityDashboard.class));
                 finish();
             }
         }, secondsDelayed * 3000);

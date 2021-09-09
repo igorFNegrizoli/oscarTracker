@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Dashboard"
+            android:name=".dashboard.ActivityDashboard"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
 

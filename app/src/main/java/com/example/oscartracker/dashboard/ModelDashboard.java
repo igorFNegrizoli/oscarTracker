@@ -11,9 +11,10 @@ import database.databaseHelper;
 import utils.Utils;
 
 public class ModelDashboard {
-    Integer movies_remaining;
+    String movies_remaining;
     String time_remaining;
-    Integer num_categories_remaining;
+    private Integer num_categories_remaining;
+    String num_categories_remaining_text;
     List<String> categories_remaining;
     private SQLiteDatabase le;
     private final consultas consulta = new consultas();
@@ -27,19 +28,19 @@ public class ModelDashboard {
         le = db.getReadableDatabase();
         Integer[] pair = consulta.getMoviesRemaining(le);
 
-        this.movies_remaining = pair[0];
-        this.time_remaining = utils.duracaoToString(pair[1]);
+        this.movies_remaining = pair[0].toString();
+        this.time_remaining = utils.duracaoToLongString(pair[1]);
         this.categories_remaining = consulta.getCategoriesRemaining(le);
         this.num_categories_remaining = this.categories_remaining.size();
-
+        this.num_categories_remaining_text = this.num_categories_remaining.toString() + " Categories remaining:";
         le.close();
     }
 
-    public Integer getMovies_remaining() {
+    public String getMovies_remaining() {
         return movies_remaining;
     }
 
-    public void setMovies_remaining(Integer movies_remaining) {
+    public void setMovies_remaining(String movies_remaining) {
         this.movies_remaining = movies_remaining;
     }
 
