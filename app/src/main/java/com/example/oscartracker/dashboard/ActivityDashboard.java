@@ -2,7 +2,6 @@ package com.example.oscartracker.dashboard;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,14 +9,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.oscartracker.Categories;
+import com.example.oscartracker.categories.Categories;
 import com.example.oscartracker.Picks;
 import com.example.oscartracker.R;
 import com.example.oscartracker.movies_list.ActivityMoviesList;
 import com.example.oscartracker.settings.ActivitySettingsScreen;
-
-import database.consultas;
-import database.databaseHelper;
 
 
 public class ActivityDashboard extends AppCompatActivity {

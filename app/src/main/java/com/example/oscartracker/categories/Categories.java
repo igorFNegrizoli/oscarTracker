@@ -1,8 +1,10 @@
-package com.example.oscartracker;
+package com.example.oscartracker.categories;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.oscartracker.R;
 
 
 public class Categories extends AppCompatActivity {

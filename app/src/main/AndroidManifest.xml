@@ -41,12 +41,12 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".Categories"
+            android:name=".categories.Categories"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
         </activity>
         <activity
-            android:name=".CategoriesCard"
+            android:name=".categories.CategoriesCard"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
         </activity>

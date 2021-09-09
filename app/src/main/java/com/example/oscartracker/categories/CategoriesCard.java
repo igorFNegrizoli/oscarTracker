@@ -1,4 +1,4 @@
-package com.example.oscartracker;
+package com.example.oscartracker.categories;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
+
+import com.example.oscartracker.R;
 
 public class CategoriesCard extends AppCompatActivity {
     LinearLayout hiddenView;
