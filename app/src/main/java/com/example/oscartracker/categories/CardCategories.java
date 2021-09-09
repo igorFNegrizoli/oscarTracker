@@ -13,7 +13,7 @@ import androidx.transition.TransitionManager;
 
 import com.example.oscartracker.R;
 
-public class CategoriesCard extends AppCompatActivity {
+public class CardCategories extends AppCompatActivity {
     LinearLayout hiddenView;
     CardView cardView;
     Button buttonView;

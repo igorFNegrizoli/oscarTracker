@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.oscartracker.categories.Categories;
+import com.example.oscartracker.categories.ActivityCategories;
 import com.example.oscartracker.Picks;
 import com.example.oscartracker.R;
 import com.example.oscartracker.movies_list.ActivityMoviesList;
@@ -67,7 +67,7 @@ public class ActivityDashboard extends AppCompatActivity {
     }
 
     public void open_categories(View view) {
-        Intent intent = new Intent(this, Categories.class);
+        Intent intent = new Intent(this, ActivityCategories.class);
         startActivity(intent);
     }
 

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import com.example.oscartracker.R;
 
 
-public class Categories extends AppCompatActivity {
+public class ActivityCategories extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
