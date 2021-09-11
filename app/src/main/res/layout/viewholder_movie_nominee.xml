@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoSizeTextType="uniform"
-                android:text="Yuh-Jung Youn"
+                android:text=" "
                 android:textAlignment="viewStart"
                 android:textColor="@color/yellow"
                 android:textSize="15dp" />

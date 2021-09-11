@@ -17,6 +17,7 @@ public class CardCategories extends AppCompatActivity {
     LinearLayout hiddenView;
     CardView cardView;
     Button buttonView;
+    //private ModelCategories categories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class CardCategories extends AppCompatActivity {
         cardView = findViewById(R.id.base_cardview);
         hiddenView = findViewById(R.id.hidden_view);
         buttonView = findViewById(R.id.cat_button);
+        //categories = new ModelCategories(this);
 
         buttonView.setOnClickListener(new View.OnClickListener() {
             @Override
