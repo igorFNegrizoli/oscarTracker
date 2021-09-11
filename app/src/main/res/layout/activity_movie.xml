@@ -105,7 +105,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginHorizontal="8dp"
         android:layout_marginVertical="8dp"
-        tools:listitem="@layout/viewholder_nomination"
+        tools:listitem="@layout/viewholder_movie_nominee"
         />
 
     <Switch

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -9,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
+        android:gravity="top"
         android:layout_margin="5dp"
         android:weightSum="10">
 
@@ -28,7 +27,7 @@
                 android:autoSizeTextType="uniform"
                 android:textAlignment="viewStart"
                 android:textColor="@color/yellow"
-                android:textSize="15sp"
+                android:textSize="15dp"
                 />
 
             <TextView
@@ -39,19 +38,19 @@
                 android:autoSizeTextType="uniform"
                 android:textAlignment="viewStart"
                 android:textColor="@color/yellow"
-                android:textSize="15sp"/>
+                android:textSize="15dp"/>
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginLeft="5dp"
-        android:layout_weight="3">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="3">
 
-        <TextView
+            <TextView
                 android:id="@+id/userRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,15 +58,15 @@
                 android:text="3.5/5.0"
                 android:autoSizeTextType="uniform"
                 android:textColor="@color/yellow"
-                android:textSize="15sp"/>
+                android:textSize="20sp"/>
 
-        <ImageView
-            android:id="@+id/imageViewStar"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            app:srcCompat="@drawable/icon_bigstar" />
+            <ImageView
+                android:id="@+id/imageViewStar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="5dp"
+                app:srcCompat="@drawable/icon_bigstar" />
         </LinearLayout>
 
     </LinearLayout>
-
 </RelativeLayout>

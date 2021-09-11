@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -92,9 +93,6 @@ public class ActivityMovie extends AppCompatActivity {
             }
         });
 
-
-
-        /*
         //Set recycler view
         recyclerView = findViewById(R.id.recyclerViewNominations);
         this.listNominees = filme.getIndicacoes();
@@ -126,13 +124,13 @@ public class ActivityMovie extends AppCompatActivity {
                 )
         );
 
-         */
+
     }
 
     public void back_to_previous(View view){
         finish();
     }
-
+/*
     public static void dimBehind(PopupWindow popupWindow) {
         View container = popupWindow.getContentView().getRootView();
         Context context = popupWindow.getContentView().getContext();
@@ -177,4 +175,6 @@ public class ActivityMovie extends AppCompatActivity {
         });
     }
 
+
+ */
 }
