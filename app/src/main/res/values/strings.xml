@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">oscarTracker</string>
+    <string name="app_name">Oscar Tracker</string>
     <string name="cat_best_director">Best Director</string>
     <string name="cat_best_picture">Best Picture</string>
     <string name="cat_best_actress_in_a_leading_role">Best Actress</string>
