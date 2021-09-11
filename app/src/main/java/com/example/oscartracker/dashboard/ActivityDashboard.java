@@ -68,6 +68,7 @@ public class ActivityDashboard extends AppCompatActivity {
 
         moviesRemaining.setText(model.movies_remaining);
         timeRemaining.setText(model.time_remaining);
+        categoriesRemaining.setText(model.num_categories_remaining_text);
 
         //Set recycler view items
         recyclerView = findViewById(R.id.recyclerViewDashboard);

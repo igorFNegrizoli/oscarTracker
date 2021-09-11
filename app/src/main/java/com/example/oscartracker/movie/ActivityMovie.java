@@ -197,7 +197,7 @@ public class ActivityMovie extends AppCompatActivity {
             int resId = this.getResources().getIdentifier(nomination.getCaminho_imagem_indicado(), "drawable", this.getPackageName());
             image.setImageResource(resId);
         }
-        ratingBar.setRating(nomination.getRating());
+        ratingBar.setRating(nomination.getRating()/10);
 
         dimBehind(popupWindow);
         popupView.setOnTouchListener(new View.OnTouchListener() {
