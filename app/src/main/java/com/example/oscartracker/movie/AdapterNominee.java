@@ -41,7 +41,9 @@ public class AdapterNominee extends RecyclerView.Adapter<AdapterNominee.MyViewHo
         ModelMovieNomination nominee = nominationsList.get(position);
         holder.nome_categoria.setText(nominee.getNome_categoria());
         holder.indicado.setText(nominee.getIndicado());
-        holder.rating.setText(String.format(nominee.getRating()+"/5.0"));
+        float real_rating = (float) nominee.getRating();
+        real_rating /= 10.0;
+        holder.rating.setText(String.format(real_rating+"/5.0"));
         //holder.caminho_imagem_indicado.setText(nominee.getCaminho_imagem_indicado());
         //Log.i("Teste", holder.rating);
         //holder.rating.setRating(nominee.getRating());

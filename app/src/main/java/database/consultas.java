@@ -239,7 +239,7 @@ public class consultas {
         List<ModelMovieNomination> listMovieNominations = new ArrayList<>();
 
         try{
-            String consulta = "SELECT categoria.nome, rating, indicado, caminhoImagemIndicado " +
+            String consulta = "SELECT categoria.nome, rating, indicado, caminhoImagemIndicado, id_filme " +
                     "FROM categoriaFilme, categoria " +
                     "WHERE id_filme="+movie_id+" AND id_categoria=id AND selecionada=1 " +
                     "ORDER BY categoria.nome ";
@@ -250,6 +250,7 @@ public class consultas {
             int indiceRating = cursor.getColumnIndex("rating");
             int indiceIndicado = cursor.getColumnIndex("indicado");
             int indiceImagem = cursor.getColumnIndex("caminhoImagemIndicado");
+            int indiceFilmeID = cursor.getColumnIndex("id_filme");
 
             cursor.moveToFirst();
 
@@ -260,6 +261,7 @@ public class consultas {
                 new_nomination.setRating(cursor.getInt(indiceRating));
                 new_nomination.setIndicado(cursor.getString(indiceIndicado));
                 new_nomination.setCaminho_imagem_indicado(cursor.getString(indiceImagem));
+                new_nomination.setFilme_id(cursor.getInt(indiceFilmeID));
 
                 listMovieNominations.add(new_nomination);
 

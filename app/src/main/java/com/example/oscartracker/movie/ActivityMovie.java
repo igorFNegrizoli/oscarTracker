@@ -42,16 +42,34 @@ import java.util.List;
 import database.consultas;
 import database.databaseHelper;
 
-
 public class ActivityMovie extends AppCompatActivity {
 
     private List<ModelMovieNomination> listNominees = new ArrayList<>();
     private RecyclerView recyclerView;
+    private ModelMovie filme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
+        setFields(this);
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        setFields(this);
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        setFields(this);
+    }
+
+
+    private void setFields(Context context){
         //Typeface type = Typeface.createFromAsset(getAssets(),"fonts/arial.ttf");
         //TextView.setTypeface(type);
         //View imagevi = (ImageView) findViewById(R.id.imageView0);
@@ -62,7 +80,7 @@ public class ActivityMovie extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         //TextView titleTextView = (TextView)findViewById(R.id.myAwesomeTextView);
-        ModelMovie filme = new ModelMovie();
+        filme = new ModelMovie();
         filme.getModelMovieFromDB(this, getIntent().getStringExtra("nomeFilme"));
 
         //Setting text atribbutes
@@ -122,8 +140,6 @@ public class ActivityMovie extends AppCompatActivity {
                         }
                 )
         );
-
-
     }
 
     public void back_to_previous(View view){
@@ -160,6 +176,20 @@ public class ActivityMovie extends AppCompatActivity {
         TextView nominee = popupWindow.getContentView().findViewById(R.id.nomineePopup);
         ImageView image = popupWindow.getContentView().findViewById(R.id.nomineeImagePopup);
         RatingBar ratingBar = popupWindow.getContentView().findViewById(R.id.ratingBarPopup);
+        Button saveButtonPopup = popupWindow.getContentView().findViewById(R.id.saveButtonPopup);
+
+        Context ctxt = this;
+
+        saveButtonPopup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                float rating = ratingBar.getRating();
+                int ten_times_rating = (int) (rating*10);
+                nomination.setRating(ten_times_rating);
+                nomination.writeToDB(ctxt);
+                popupWindow.dismiss();
+            }
+        });
 
         catName.setText(nomination.getNome_categoria());
         if(nomination.getIndicado() != null){
