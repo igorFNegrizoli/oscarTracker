@@ -7,58 +7,63 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:gravity="top"
-        android:layout_margin="5dp"
+        android:orientation="horizontal"
         android:weightSum="10">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="7"
-            android:layout_marginRight="10dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="9"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/catName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Best Performance by an Actress in a Supporting Role"
                 android:autoSizeTextType="uniform"
+                android:text="Best Performance by an Actress in a Supporting Role"
                 android:textAlignment="viewStart"
                 android:textColor="@color/yellow"
-                android:textSize="15dp"
-                />
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/nominee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Yuh-Jung Youn"
                 android:autoSizeTextType="uniform"
+                android:text="Yuh-Jung Youn"
                 android:textAlignment="viewStart"
                 android:textColor="@color/yellow"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="3">
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:orientation="horizontal">
+
 
             <TextView
                 android:id="@+id/userRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
                 android:gravity="center"
                 android:text="3.5/5.0"
-                android:autoSizeTextType="uniform"
                 android:textColor="@color/yellow"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <ImageView
                 android:id="@+id/imageViewStar"
@@ -66,6 +71,7 @@
                 android:layout_height="20dp"
                 android:layout_marginLeft="5dp"
                 app:srcCompat="@drawable/icon_bigstar" />
+
         </LinearLayout>
 
     </LinearLayout>
