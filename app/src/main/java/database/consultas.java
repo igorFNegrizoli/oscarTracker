@@ -241,7 +241,8 @@ public class consultas {
         try{
             String consulta = "SELECT categoria.nome, rating, indicado, caminhoImagemIndicado " +
                     "FROM categoriaFilme, categoria " +
-                    "WHERE id_filme="+movie_id+" AND id_categoria=id AND selecionada=1";
+                    "WHERE id_filme="+movie_id+" AND id_categoria=id AND selecionada=1 " +
+                    "ORDER BY categoria.nome ";
 
             Cursor cursor = le.rawQuery(consulta,null);
 
