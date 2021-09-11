@@ -1,10 +1,34 @@
 package com.example.oscartracker.movie;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
+import database.consultas;
+import database.databaseHelper;
+
 public class ModelMovieNomination {
     String nome_categoria;
     String indicado;
     String caminho_imagem_indicado;
     Integer rating;
+    private int filme_id;
+
+    public void writeToDB(Context context){
+        SQLiteDatabase escreve;
+        final consultas consulta = new consultas();
+        databaseHelper db = new databaseHelper(context);
+        escreve = db.getWritableDatabase();
+
+        consulta.writeNotaFilmeCategoria(escreve, filme_id, nome_categoria, rating);
+    }
+
+    public int getFilme_id() {
+        return filme_id;
+    }
+
+    public void setFilme_id(int filme_id) {
+        this.filme_id = filme_id;
+    }
 
     public ModelMovieNomination() {
     }
