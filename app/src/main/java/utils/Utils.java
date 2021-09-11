@@ -63,7 +63,7 @@ public class Utils {
             case "Sound": return "icon_sound";
             case "Music (Original Score)": return "icon_music";
             case "Music (Original Song)": return "icon_music";
-            case "Production Design": return "";
+            case "Production Design": return "icon_production";
             case "Visual Effects": return "icon_visual_effect";
             case "Makeup and Hairstyling": return "icon_hairstyling";
             case "Costume Design": return "icon_costume";
