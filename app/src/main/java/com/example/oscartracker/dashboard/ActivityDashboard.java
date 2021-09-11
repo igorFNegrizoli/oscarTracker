@@ -114,7 +114,7 @@ public class ActivityDashboard extends AppCompatActivity {
     }
 
     public void open_categories(View view) {
-        Intent intent = new Intent(this, CardCategories.class);
+        Intent intent = new Intent(this, ActivityCategories.class);
         startActivity(intent);
     }
 
