@@ -53,20 +53,20 @@ public class Utils {
             case "Writing (Adapted Screenplay)": return "icon_screenplay";
             case "Writing (Original Screenplay)": return "icon_screenplay";
             case "International Feature Film": return "icon_world";
-            case "Documentary (Feature)": return "icon_cinema_clapper";
-            case "Animated Feature Film": return "";
+            case "Documentary (Feature)": return "icon_documentary";
+            case "Animated Feature Film": return "icon_animation";
             case "Cinematography": return "icon_camera";
             case "Film Editing": return "icon_editing";
-            case "Short Film (Animated)": return "";
-            case "Short Film (Live Action)": return "";
-            case "Documentary (Short Subject)": return "";
-            case "Sound": return "";
-            case "Music (Original Score)": return "";
-            case "Music (Original Song)": return "";
+            case "Short Film (Animated)": return "icon_animation";
+            case "Short Film (Live Action)": return "icon_cinema_clapper";
+            case "Documentary (Short Subject)": return "icon_documentary";
+            case "Sound": return "icon_sound";
+            case "Music (Original Score)": return "icon_music";
+            case "Music (Original Song)": return "icon_music";
             case "Production Design": return "";
-            case "Visual Effects": return "";
-            case "Makeup and Hairstyling": return "";
-            case "Costume Design": return "";
+            case "Visual Effects": return "icon_visual_effect";
+            case "Makeup and Hairstyling": return "icon_hairstyling";
+            case "Costume Design": return "icon_costume";
             default: return "";
         }
     }
