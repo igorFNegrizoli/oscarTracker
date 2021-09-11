@@ -13,9 +13,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,6 +77,23 @@ public class ActivityMovie extends AppCompatActivity {
         ImageView myImage = (ImageView) findViewById(R.id.imageMovie);
         myImage.setImageResource(resId);
 
+        Switch jaViuSwitch = (Switch)findViewById(R.id.switch3);
+        jaViuSwitch.setChecked(filme.isJaViu());
+
+        Context ctxt = this;
+
+        jaViuSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(buttonView.isPressed()){
+                    filme.setJaViu(isChecked);
+                    filme.saveInfoToDB(ctxt);
+                }
+            }
+        });
+
+
+
         /*
         //Set recycler view
         recyclerView = findViewById(R.id.recyclerViewNominations);
@@ -107,6 +127,10 @@ public class ActivityMovie extends AppCompatActivity {
         );
 
          */
+    }
+
+    public void back_to_previous(View view){
+        finish();
     }
 
     public static void dimBehind(PopupWindow popupWindow) {

@@ -130,6 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:backgroundTint="@color/yellow"
+        android:onClick="back_to_previous"
         android:text="Save"
         android:textAllCaps="false"
         android:textColor="@color/bg_black"
@@ -138,5 +139,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

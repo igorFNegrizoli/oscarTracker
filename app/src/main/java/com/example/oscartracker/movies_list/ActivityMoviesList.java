@@ -1,5 +1,6 @@
 package com.example.oscartracker.movies_list;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -29,10 +30,13 @@ public class ActivityMoviesList extends AppCompatActivity {
     private RecyclerView recyclerView;
     //View decorView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies_list);
+        setFields(this);
 
         /*decorView = getWindow().getDecorView();
         decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener(){
@@ -42,7 +46,16 @@ public class ActivityMoviesList extends AppCompatActivity {
             }
         });
         */
+    }
 
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        setFields(this);
+    }
+
+    public void setFields(Context context){
         recyclerView = findViewById(R.id.recyclerView);
         this.populateMovies();
         AdapterMoviesList adapter = new AdapterMoviesList(listMovies);
@@ -73,6 +86,8 @@ public class ActivityMoviesList extends AppCompatActivity {
                 )
         );
     }
+
+
 /*
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {

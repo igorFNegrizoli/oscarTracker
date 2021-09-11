@@ -60,7 +60,7 @@ public class AdapterNominee extends RecyclerView.Adapter<AdapterNominee.MyViewHo
             super(itemView);
             nome_categoria = itemView.findViewById(R.id.catName);
             indicado = itemView.findViewById(R.id.nominee);
-            rating = itemView.findViewById(R.id.ratingBarNominee);
+            //rating = itemView.findViewById(R.id.ratingBarNominee);
         }
     }
 }
