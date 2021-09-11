@@ -19,6 +19,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.RatingBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -110,10 +111,8 @@ public class ActivityMovie extends AppCompatActivity {
                             @Override
                             public void onItemClick(View view, int position) {
                                 ModelMovieNomination nomination = listNominees.get(position);
-                                //Intent i = new Intent(ActivityMoviesList.this, ActivityMovie.class);
-                                //i.putExtra("nomeFilme", filme.getNome());
-                                //startActivity(i);
-                                Toast.makeText(getApplicationContext(), "Curto: " + nomination.getIndicado(), Toast.LENGTH_SHORT).show();
+                                onButtonShowPopupWindowClick(view, nomination);
+                                //Toast.makeText(getApplicationContext(), "Curto: " + nomination.getIndicado(), Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
@@ -130,7 +129,7 @@ public class ActivityMovie extends AppCompatActivity {
     public void back_to_previous(View view){
         finish();
     }
-/*
+
     public static void dimBehind(PopupWindow popupWindow) {
         View container = popupWindow.getContentView().getRootView();
         Context context = popupWindow.getContentView().getContext();
@@ -141,8 +140,8 @@ public class ActivityMovie extends AppCompatActivity {
         wm.updateViewLayout(container, p);
     }
 
-    public void onButtonShowPopupWindowClick(View view) {
-
+    public void onButtonShowPopupWindowClick(View view, ModelMovieNomination nomination) {
+        Log.i("Teste", "Nome Categoria: "+nomination.getNome_categoria());
         // inflate the layout of the popup window
         LayoutInflater inflater = (LayoutInflater)
                 getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -154,15 +153,21 @@ public class ActivityMovie extends AppCompatActivity {
         boolean focusable = true; // lets taps outside the popup also dismiss it
         final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
 
-
-
         // show the popup window
         // which view you pass in doesn't matter, it is only used for the window tolken
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-        //View imagevi = (ImageView) findViewById(R.id.imageView9);
-        //imagevi.setImageResource();
-        //imagevi.setEnabled(false);
-        // dismiss the popup window when touched
+        TextView catName = popupWindow.getContentView().findViewById(R.id.catNamePopup);
+        TextView nominee = popupWindow.getContentView().findViewById(R.id.nomineePopup);
+        ImageView image = popupWindow.getContentView().findViewById(R.id.nomineeImagePopup);
+        RatingBar ratingBar = popupWindow.getContentView().findViewById(R.id.ratingBarPopup);
+
+        catName.setText(nomination.getNome_categoria());
+        if(nomination.getIndicado() != null){
+            nominee.setText(nomination.getIndicado());
+            int resId = this.getResources().getIdentifier(nomination.getCaminho_imagem_indicado(), "drawable", this.getPackageName());
+            image.setImageResource(resId);
+        }
+        ratingBar.setRating(nomination.getRating());
 
         dimBehind(popupWindow);
         popupView.setOnTouchListener(new View.OnTouchListener() {
@@ -175,6 +180,4 @@ public class ActivityMovie extends AppCompatActivity {
         });
     }
 
-
- */
 }

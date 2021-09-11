@@ -17,6 +17,7 @@
         android:clickable="true">
 
         <TextView
+            android:id="@+id/catNamePopup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -26,6 +27,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/nomineePopup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -33,20 +35,20 @@
             android:layout_margin="8sp"
 
             android:gravity="center"
-            android:text="Yuh-Jung Youn"
+            android:text=" "
             android:textColor="@color/yellow"
             android:textSize="22sp" />
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/nomineeImagePopup"
             android:layout_width="match_parent"
             android:layout_height="160sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/image_minari_sup_actress" />
+            app:srcCompat="@drawable/icon_oscars" />
 
         <RatingBar
-            android:id="@+id/ratingBar"
+            android:id="@+id/ratingBarPopup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -56,7 +58,7 @@
             android:progressTint="@color/yellow" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/saveButtonPopup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
