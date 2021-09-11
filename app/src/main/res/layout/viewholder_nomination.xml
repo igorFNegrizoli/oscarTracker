@@ -41,19 +41,14 @@
                 android:textSize="15sp"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="5">
-            <RatingBar
-                android:id="@+id/ratingBarNominee"
-                style="@style/Widget.AppCompat.RatingBar.Small"
-                android:isIndicator="false"
+        <TextView
+                android:id="@+id/rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/bg_black"
-                android:progressTint="@color/yellow"/>
+                android:text="3.5/5.0"
+                android:autoSizeTextType="uniform"
+                android:textColor="@color/yellow"
+                android:textSize="15sp"/>
         </LinearLayout>
 
     </LinearLayout>

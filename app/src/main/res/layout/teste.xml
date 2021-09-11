@@ -17,11 +17,11 @@
 
                 <RatingBar
                     android:id="@+id/ratingBar2"
-                    style="@style/Widget.AppCompat.RatingBar.Small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:isIndicator="false"
+                    style="@style/Widget.AppCompat.RatingBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:backgroundTint="@color/bg_black"
+                    android:isIndicator="false"
                     android:progressTint="@color/yellow" />
         </LinearLayout>
 

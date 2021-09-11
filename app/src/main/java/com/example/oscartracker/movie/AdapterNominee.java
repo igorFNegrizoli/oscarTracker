@@ -1,5 +1,6 @@
 package com.example.oscartracker.movie;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +42,8 @@ public class AdapterNominee extends RecyclerView.Adapter<AdapterNominee.MyViewHo
         holder.nome_categoria.setText(nominee.getNome_categoria());
         holder.indicado.setText(nominee.getIndicado());
         //holder.caminho_imagem_indicado.setText(nominee.getCaminho_imagem_indicado());
-        holder.rating.setRating(nominee.getRating());;
+        //Log.i("Teste", holder.rating);
+        //holder.rating.setRating(nominee.getRating());
     }
 
     @Override

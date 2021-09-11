@@ -74,6 +74,7 @@ public class ActivityMovie extends AppCompatActivity {
         ImageView myImage = (ImageView) findViewById(R.id.imageMovie);
         myImage.setImageResource(resId);
 
+        /*
         //Set recycler view
         recyclerView = findViewById(R.id.recyclerViewNominations);
         this.listNominees = filme.getIndicacoes();
@@ -104,6 +105,8 @@ public class ActivityMovie extends AppCompatActivity {
                         }
                 )
         );
+
+         */
     }
 
     public static void dimBehind(PopupWindow popupWindow) {
@@ -134,8 +137,8 @@ public class ActivityMovie extends AppCompatActivity {
         // show the popup window
         // which view you pass in doesn't matter, it is only used for the window tolken
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-        //View imagevi = (ImageView) findViewById(R.id.imageView0);
-        //imagevi.setImageResource()
+        //View imagevi = (ImageView) findViewById(R.id.imageView9);
+        //imagevi.setImageResource();
         //imagevi.setEnabled(false);
         // dismiss the popup window when touched
 
