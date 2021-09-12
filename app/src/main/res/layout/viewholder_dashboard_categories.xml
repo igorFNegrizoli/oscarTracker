@@ -11,6 +11,7 @@
         android:layout_marginHorizontal="10dp"
         android:backgroundTint="@color/yellow"
         android:text="Categoria"
+        android:clickable="false"
         android:textAllCaps="false"
         android:textColor="@color/bg_black" />
 </RelativeLayout>

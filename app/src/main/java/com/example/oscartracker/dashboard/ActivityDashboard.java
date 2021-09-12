@@ -76,27 +76,6 @@ public class ActivityDashboard extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
 
-        recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(
-                        getApplicationContext(),
-                        recyclerView,
-                        new RecyclerItemClickListener.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                String categoria = listCategories.get(position);
-                                //Intent i = new Intent(ActivityMoviesList.this, ActivityMovie.class);
-                                //i.putExtra("nomeFilme", filme.getNome());
-                                //startActivity(i);
-                                Toast.makeText(getApplicationContext(), "Curto: " + categoria, Toast.LENGTH_SHORT).show();
-                            }
-
-                            @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                            }
-                        }
-                )
-        );
 
     }
 
