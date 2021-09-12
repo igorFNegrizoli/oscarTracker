@@ -15,8 +15,8 @@ import database.databaseHelper;
 
 public class ModelTeste {
     List<Pair<String, ModelCategoryMovies>> category_elements;
-    private List<String> categories;
-    private List<ModelCategoryMovies> categoryMovies;
+    List<String> categories;
+    List<ModelCategoryMovies> categoryMovies;
 
     public ModelTeste(Context context) {
         SQLiteDatabase le;
@@ -26,20 +26,21 @@ public class ModelTeste {
 
         this.categories = consulta.readSelectedCategories(le);
 
+        this.categoryMovies = new ArrayList<>();
+
         for(String categoria: this.categories){
             ModelCategoryMovies categoryMovies = new ModelCategoryMovies(le, categoria);
             this.categoryMovies.add(categoryMovies);
         }
 
         category_elements = new ArrayList<>();
-        /*
 
         for(int i=0; i<categories.size(); i++){
             Pair<String, ModelCategoryMovies> par = new Pair(this.categories.get(i), this.categoryMovies.get(i));
             category_elements.add(par);
             Log.i("Teste2", par.first + " | " + par.second);
         }
-        */
+
 
         le.close();
     }

@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oscartracker.RecyclerItemClickListener;
+import com.example.oscartracker.categories.ActivityCategories;
+import com.example.oscartracker.categories.CardCategories;
 import com.example.oscartracker.teste.ActivityTeste;
 import com.example.oscartracker.Picks;
 import com.example.oscartracker.R;
@@ -110,7 +112,7 @@ public class ActivityDashboard extends AppCompatActivity {
 
     public void open_categories(View view) {
         //Log.i("Teste2", "AQUI");
-        Intent intent = new Intent(this, ActivityTeste.class);
+        Intent intent = new Intent(this, CardCategories.class);
         startActivity(intent);
     }
 

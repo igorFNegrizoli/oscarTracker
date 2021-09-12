@@ -37,20 +37,26 @@ public class ActivityCategories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
 
-        //Typeface type = Typeface.createFromAsset(getAssets(),"fonts/arial.ttf");
-        //TextView.setTypeface(type);
         model = new ModelCategories(this);
         category_elements = model.getCategory_elements();
 
-        /*
-        //recyclerView = findViewById(R.id.categoriesBaseRecyclerView);
+        recyclerView = findViewById(R.id.category_recycler_buttons);
         AdapterCategories adapter = new AdapterCategories(category_elements);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
 
-        recyclerView.addOnItemTouchListener(
+        for(Pair<String, ModelCategoryMovies> par: model.category_elements){
+            Log.i("Teste3: ", "categoria "+par.first);
+            for(Pair<String, Integer> parFilme: par.second.getFilmesNotas()){
+                Log.i("Teste3", "Filme: "+parFilme.first+" Nota: "+parFilme.second);
+            }
+        }
+        int size = category_elements.size();
+        Log.i("Teste3", "size: "+size);
+
+        /*recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(
                         getApplicationContext(),
                         recyclerView,
@@ -61,7 +67,7 @@ public class ActivityCategories extends AppCompatActivity {
                                 //Intent i = new Intent(ActivityMoviesList.this, ActivityMovie.class);
                                 //i.putExtra("nomeFilme", filme.getNome());
                                 //startActivity(i);
-                                Toast.makeText(getApplicationContext(), "Curto: " + category_elements.get(position).first, Toast.LENGTH_SHORT).show();
+
                             }
 
                             @Override
@@ -73,6 +79,8 @@ public class ActivityCategories extends AppCompatActivity {
         );
 
          */
+
+
 
 
     }

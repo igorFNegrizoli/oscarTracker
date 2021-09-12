@@ -23,7 +23,6 @@ public class ModelCategoryMovies {
 
     public ModelCategoryMovies(SQLiteDatabase le, String category) {
         final consultas consulta = new consultas();
-
         this.filmesNotas =  consulta.readCategoriaFilmesNotas(le, category);
     }
 }
