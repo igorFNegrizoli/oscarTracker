@@ -1,21 +1,24 @@
-package com.example.oscartracker.categories;
+package com.example.oscartracker.teste;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.util.Pair;
 
+import com.example.oscartracker.categories.ModelCategoryMovies;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import database.consultas;
 import database.databaseHelper;
 
-public class ModelCategories {
+public class ModelTeste {
     List<Pair<String, ModelCategoryMovies>> category_elements;
     private List<String> categories;
     private List<ModelCategoryMovies> categoryMovies;
 
-    public ModelCategories(Context context) {
+    public ModelTeste(Context context) {
         SQLiteDatabase le;
         final consultas consulta = new consultas();
         databaseHelper db = new databaseHelper(context);
@@ -28,11 +31,15 @@ public class ModelCategories {
             this.categoryMovies.add(categoryMovies);
         }
 
+        category_elements = new ArrayList<>();
+        /*
+
         for(int i=0; i<categories.size(); i++){
             Pair<String, ModelCategoryMovies> par = new Pair(this.categories.get(i), this.categoryMovies.get(i));
             category_elements.add(par);
-            //Log.i("Teste2", par.first + " | " + par.second);
+            Log.i("Teste2", par.first + " | " + par.second);
         }
+        */
 
         le.close();
     }

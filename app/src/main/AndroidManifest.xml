@@ -12,7 +12,7 @@
         android:theme="@style/mainTheme">
 
         <activity
-            android:name=".Teste"
+            android:name=".teste.ActivityTeste"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
 

@@ -11,18 +11,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oscartracker.RecyclerItemClickListener;
-import com.example.oscartracker.categories.ActivityCategories;
+import com.example.oscartracker.teste.ActivityTeste;
 import com.example.oscartracker.Picks;
 import com.example.oscartracker.R;
-import com.example.oscartracker.movie.ActivityMovie;
-import com.example.oscartracker.categories.CardCategories;
 import com.example.oscartracker.movies_list.ActivityMoviesList;
-import com.example.oscartracker.movies_list.AdapterMoviesList;
-import com.example.oscartracker.movies_list.ModelMoviesList;
 import com.example.oscartracker.settings.ActivitySettingsScreen;
 
 import java.util.ArrayList;
@@ -114,7 +109,8 @@ public class ActivityDashboard extends AppCompatActivity {
     }
 
     public void open_categories(View view) {
-        Intent intent = new Intent(this, ActivityCategories.class);
+        //Log.i("Teste2", "AQUI");
+        Intent intent = new Intent(this, ActivityTeste.class);
         startActivity(intent);
     }
 
