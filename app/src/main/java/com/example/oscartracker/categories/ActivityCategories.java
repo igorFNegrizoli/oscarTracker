@@ -41,7 +41,7 @@ public class ActivityCategories extends AppCompatActivity {
         category_elements = model.getCategory_elements();
 
         recyclerView = findViewById(R.id.category_recycler_buttons);
-        AdapterCategories adapter = new AdapterCategories(category_elements);
+        AdapterCategories adapter = new AdapterCategories(category_elements, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);

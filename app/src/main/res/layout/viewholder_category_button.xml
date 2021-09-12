@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".categories.CardCategories"
     android:background="@color/bg_black"
     android:fitsSystemWindows="true">
@@ -71,8 +71,13 @@
                 visibility is initially set to 'gone'.
                 The parent LinearLayout contains 3 child LinearLayouts
                 that hold a subject name and an icon each.-->
-            <LinearLayout
-                android:id="@+id/hidden_view"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="@color/bg_black"
+                android:id="@+id/hidden_view_little_drawer"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="8dp"
+                tools:listitem="@layout/viewholder_category_movies"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -80,67 +85,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fixed_layout">
-
-                <!--Child LinearLayout 1-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:text="Database Management"
-                        android:textColor="#000000"
-                        android:textSize="20dp" />
-                </LinearLayout>
-
-                <!--Child LinearLayout 2-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:text="Data Structures"
-                        android:textColor="#000000"
-                        android:textSize="20dp" />
-                </LinearLayout>
-
-                <!--Child LinearLayout 3-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:text="Operating Systems"
-                        android:textColor="#000000"
-                        android:textSize="20dp" />
-                </LinearLayout>
-            </LinearLayout>
-            <!--
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/hidden_view"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginVertical="8dp"
-                tools:listitem="@layout/viewholder_category_movies"
+                app:layout_constraintTop_toBottomOf="@+id/fixed_layout"
                 />
-               -->
 
 
 
