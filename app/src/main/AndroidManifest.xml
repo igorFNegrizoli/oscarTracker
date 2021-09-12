@@ -12,19 +12,6 @@
         android:theme="@style/mainTheme">
 
         <activity
-            android:name=".teste.ActivityTeste"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity">
-
-        </activity>
-
-        <activity
-            android:name=".Nomination"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity">
-        </activity>
-
-        <activity
             android:name=".SplashScreen"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -58,11 +45,6 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".categories.ActivityCategories"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity">
-        </activity>
-        <activity
-            android:name=".categories.CardCategories"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
         </activity>

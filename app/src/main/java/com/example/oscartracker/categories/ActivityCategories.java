@@ -36,7 +36,17 @@ public class ActivityCategories extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
+        setFields(this);
+    }
 
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        setFields(this);
+    }
+
+    public void setFields(Context context){
         model = new ModelCategories(this);
         category_elements = model.getCategory_elements();
 
@@ -46,43 +56,6 @@ public class ActivityCategories extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
-
-        for(Pair<String, ModelCategoryMovies> par: model.category_elements){
-            Log.i("Teste3: ", "categoria "+par.first);
-            for(Pair<String, Integer> parFilme: par.second.getFilmesNotas()){
-                Log.i("Teste3", "Filme: "+parFilme.first+" Nota: "+parFilme.second);
-            }
-        }
-        int size = category_elements.size();
-        Log.i("Teste3", "size: "+size);
-
-        /*recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(
-                        getApplicationContext(),
-                        recyclerView,
-                        new RecyclerItemClickListener.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                //ModelCategories category = listMovies.get(position);
-                                //Intent i = new Intent(ActivityMoviesList.this, ActivityMovie.class);
-                                //i.putExtra("nomeFilme", filme.getNome());
-                                //startActivity(i);
-
-                            }
-
-                            @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                            }
-                        }
-                )
-        );
-
-         */
-
-
-
-
     }
 
 }

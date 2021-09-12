@@ -4,19 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.oscartracker.RecyclerItemClickListener;
 import com.example.oscartracker.categories.ActivityCategories;
-import com.example.oscartracker.categories.CardCategories;
-import com.example.oscartracker.teste.ActivityTeste;
 import com.example.oscartracker.Picks;
 import com.example.oscartracker.R;
 import com.example.oscartracker.movies_list.ActivityMoviesList;

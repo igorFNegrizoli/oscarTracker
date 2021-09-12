@@ -54,12 +54,11 @@ public class AdapterCategories extends RecyclerView.Adapter<AdapterCategories.My
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         int size = category_elements.size();
-        Log.i("Teste3", "size: "+size);
 
         String category = category_elements.get(position).first;
         holder.button.setText(category);
         int resId = ctxt.getResources().getIdentifier(utils.categoryButtonName(category), "drawable", ctxt.getPackageName());
-        Log.i("Teste4", "ID Imagem: "+resId);
+
         Drawable img = ctxt.getResources().getDrawable(resId);
         img.setBounds(0, 0, 60, 60);
         holder.button.setCompoundDrawables(img, null, null, null);
