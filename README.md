@@ -10,36 +10,36 @@ This app was made as a final assignment for the Systems Developing Technologies 
 </p>
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/OscarTracker_Dashboard1.jpg" /><br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/OscarTracker_Dashboard1.jpg" width="250"/><br>
   <span><i>Dashboard screen where you can check your movie watching progress</i></span>
 </p>
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/OscarTracker_Settings.jpg" /><br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/OscarTracker_Settings.jpg" width="250"/><br>
   <span><i>Setting screen where you can check which categories you want to track</i></span>
 </p>
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/OscarTracker_MoviesList.jpg" /><br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/OscarTracker_MoviesList.jpg" width="250"/><br>
   <span><i>Movies listing screen where you can check which movies you watched and the ones you didn't</i></span>
 </p>
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/OscarTracker_Movie2.jpg" /><br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/OscarTracker_Movie2.jpg" width="250"/><br>
   <span><i>Individual movie screen where you can rate each category that you checkecd on Settings the movie was nominated</i></span>
 </p>
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/OscarTracker_MinariMovie.jpg" /><br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/OscarTracker_MinariMovie.jpg" width="250"/><br>
   <span><i>Another movie screen</i></span>
 </p>
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/OscarTracker_RatingPopup.jpg" /><br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/OscarTracker_RatingPopup.jpg" width="250"/><br>
   <span><i>Rating individual category of movie</i></span>
 </p>
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/OscarTracker_CategoriesEspanded.jpg" /><br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/OscarTracker_CategoriesEspanded.jpg" width="250"/><br>
   <span><i>Categories screen wich you can check your ratings for each category and go directly to the movie you clicked</i></span>
 </p>
