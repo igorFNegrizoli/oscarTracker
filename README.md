@@ -5,7 +5,7 @@ OscarTracker is an Android app written in Java which the purpose is to manage th
 This app was made as a final assignment for the Systems Developing Technologies class by the students [Igor França Negrizoli](https://github.com/igorFNegrizoli) and [Mateus Karvat Camara](https://github.com/MahatKC) 
  
  <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/OscarTracker_SplashScreen.jpg" width="300"/><br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/OscarTracker_SplashScreen.jpg" width="250"/><br>
   <span><i>Splashscreen</i></span>
 </p>
 
