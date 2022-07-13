@@ -1,8 +1,8 @@
 # oscarTracker
 
-OscarTracker is an Android app written in Java which the purpose is to manage the oscar nominated movies you watched and the ones you didn't and rate each nomination for the movies you watched. 
+OscarTracker is an Android app written in Java whose purpose is to manage the Oscar nominated movies you watched and the ones you didn't and rate each nomination for the movies you watched.
  
-This app was made as a final assignment for the Systems Developing Technologies class by the students [Igor França Negrizoli](https://github.com/igorFNegrizoli) and [Mateus Karvat Camara](https://github.com/MahatKC) 
+This app was made as a final assignment for the Systems Developing Technologies class by the students [Igor França Negrizoli](https://github.com/igorFNegrizoli) and [Mateus Karvat Camara](https://github.com/MahatKC) in 2021. 
  
  <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/OscarTracker_SplashScreen.jpg" width="250"/><br>
